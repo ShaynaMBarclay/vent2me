@@ -81,8 +81,8 @@ function Journal() {
     <div className="journal-container">
       {/* Header */}
       <div className="journal-header">
-        <button onClick={() => navigate('/')} className="home-button">
-          🏠 Home
+        <button onClick={() => navigate('/')} className="journalhome-button">
+          🏠
         </button>
         <h2>How are you feeling today?</h2>
       </div>
@@ -110,7 +110,7 @@ function Journal() {
 
       <textarea
         className="journal-entry"
-        placeholder="Write your thoughts here..."
+        placeholder="Write your thoughts here...Or speak them!"
         value={entry}
         onChange={(e) => setEntry(e.target.value)}
       />
