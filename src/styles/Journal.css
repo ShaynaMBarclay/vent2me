@@ -1,0 +1,75 @@
+.journal-container {
+    max-width: 600px;
+    margin: 3rem auto;
+    padding: 2rem;
+    border-radius: 12px;
+    background-color: #fffdfc;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    text-align: center;
+    color: #5c5470;
+    margin-bottom: 1rem;
+  }
+  
+  .mood-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+  
+  .mood-button {
+    background-color: #c2fbd7;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  
+  .mood-button.selected {
+    background-color: #79e3a5;
+    font-weight: bold;
+  }
+  
+  .custom-mood {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+  
+  .journal-entry {
+    width: 100%;
+    height: 150px;
+    padding: 1rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-bottom: 1rem;
+    resize: none;
+    font-size: 1rem;
+  }
+  
+  .journal-actions {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .voice-button, .submit-button {
+    background-color: #ffb6b9;
+    color: white;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .voice-button:hover, .submit-button:hover {
+    background-color: #ff7b89;
+  }
+  
