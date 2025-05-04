@@ -11,6 +11,42 @@ function History() {
     setEntries(saved);
   }, []);
 
+  const handleExport = () => {
+    const data = JSON.stringify(entries, null, 2);
+    const blob = new Blob([data], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'my-journal-entries.json';
+    a.click();
+
+    URL.revokeObjectURL(url);
+  };
+
+  const handleImport = (event) => {
+    const file = event.target.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      try {
+        const importedEntries = JSON.parse(e.target.result);
+        if (Array.isArray(importedEntries)) {
+          localStorage.setItem('journalEntries', JSON.stringify(importedEntries));
+          setEntries(importedEntries);
+          alert('Entries imported successfully!');
+        } else {
+          alert('Invalid file format.');
+        }
+      } catch (error) {
+        alert('Error importing file.');
+      }
+    };
+    reader.readAsText(file);
+  };
+
+
   return (
     <div className="history-container">
       <div className="history-header">
@@ -18,6 +54,16 @@ function History() {
         <button onClick={() => navigate('/journal')} className="journalhome-button">📝</button>
         <h2>Your Past Entries</h2>
       </div>
+
+      
+      <div className="history-actions">
+        <button onClick={handleExport} className="export-button">📤 Export Entries</button>
+        <label className="import-label">
+          📥 Import Entries
+          <input type="file" accept="application/json" onChange={handleImport} className="import-input" />
+        </label>
+      </div>
+      
 
       {entries.length === 0 ? (
         <p className="no-entries">No entries yet.</p>

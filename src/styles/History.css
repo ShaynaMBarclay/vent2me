@@ -80,4 +80,33 @@
     color: #888;
     margin-top: 2rem;
   }
+
+  .history-actions {
+    margin: 1rem 0;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .export-button,
+  .import-label {
+    background-color: #ffe4e1;
+    color: #333;
+    border: 2px solid #d8a4a4;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .export-button:hover,
+  .import-label:hover {
+    background-color: #fddddd;
+  }
+  
+  .import-input {
+    display: none;
+  }
+  
   
