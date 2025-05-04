@@ -10,9 +10,9 @@ function Journal() {
   const [entry, setEntry] = useState('');
   const [isListening, setIsListening] = useState(false);
   const recognitionRef = useRef(null);
-  const isListeningRef = useRef(false); // 🔧 New ref to track up-to-date listening state
   const navigate = useNavigate();
 
+  // Voice recognition setup
   useEffect(() => {
     if (!('webkitSpeechRecognition' in window || 'SpeechRecognition' in window)) {
       alert('Sorry, your browser does not support voice-to-text.');
@@ -41,18 +41,17 @@ function Journal() {
     };
 
     recognition.onend = () => {
-      if (isListeningRef.current) {
-        recognition.start(); // 🔁 Restart only if listening should continue
+      if (isListening) {
+        recognition.start(); // auto-restart if needed
       }
     };
 
     recognitionRef.current = recognition;
-  }, []);
+  }, [isListening]);
 
   const startListening = () => {
     if (recognitionRef.current && !isListening) {
       setIsListening(true);
-      isListeningRef.current = true; // ✅ Sync ref
       recognitionRef.current.start();
     }
   };
@@ -60,7 +59,6 @@ function Journal() {
   const stopListening = () => {
     if (recognitionRef.current && isListening) {
       setIsListening(false);
-      isListeningRef.current = false; // ✅ Sync ref
       recognitionRef.current.stop();
       setEntry((prev) => prev.trim());
     }
@@ -68,10 +66,9 @@ function Journal() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const mood = customMood || selectedMood;
+    const mood = selectedMood;
     console.log('Mood:', mood);
     console.log('Entry:', entry);
-    // Save entry later to backend/localStorage
     setSelectedMood('');
     setCustomMood('');
     setEntry('');
@@ -79,53 +76,59 @@ function Journal() {
 
   return (
     <div className="journal-container">
-      {/* Header */}
+      {/* Header with Home Button */}
       <div className="journal-header">
-        <button onClick={() => navigate('/')} className="journalhome-button">
-          🏠
+        <button onClick={() => navigate('/')} className="home-button">
+          🏠 Home
         </button>
         <h2>How are you feeling today?</h2>
       </div>
 
-      
       {/* Mood Buttons */}
       <div className="mood-buttons">
-        {moods.map((mood) => {
-          const isSelected =
-            selectedMood === mood ||
-            (!selectedMood && customMood.toLowerCase() === mood.toLowerCase());
-          return (
-            <button
-              key={mood}
-              className={`mood-button ${
-                isSelected ? 'selected' : selectedMood || customMood ? 'dimmed' : ''
-              }`}
-              onClick={() => setSelectedMood(mood)}
-            >
-              {mood}
-            </button>
-          );
-        })}
+        {moods.map((mood) => (
+          <button
+            key={mood}
+            className={`mood-button ${selectedMood && selectedMood !== mood ? 'dimmed' : ''}`}
+            onClick={() => setSelectedMood(mood)}
+          >
+            {mood}
+          </button>
+        ))}
       </div>
 
-     {/* custom mood input */}
+      {/* Custom Mood Input */}
       <input
         className="custom-mood"
         type="text"
         placeholder="Or type your mood..."
         value={customMood}
         onChange={(e) => setCustomMood(e.target.value)}
-        
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' && customMood.trim() !== '') {
+            setSelectedMood(customMood.trim());
+            setCustomMood('');
+          }
+        }}
       />
 
+      {/* Highlighted Mood */}
+      {selectedMood && (
+        <div className="highlighted-mood">
+          <p>Your mood:</p>
+          <h3>{selectedMood}</h3>
+        </div>
+      )}
+
+      {/* Journal Entry */}
       <textarea
         className="journal-entry"
-        placeholder="Write your thoughts here...Or speak them!"
+        placeholder="Write your thoughts here..."
         value={entry}
         onChange={(e) => setEntry(e.target.value)}
       />
 
-      {/* Voice Controls & Save */}
+      {/* Action Buttons */}
       <div className="journal-actions">
         <button onClick={startListening} className="voice-button" disabled={isListening}>
           🎙️ Speak
