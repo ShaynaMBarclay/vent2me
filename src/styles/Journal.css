@@ -111,6 +111,7 @@
   }
   
   .highlighted-mood {
+    margin-left: 1rem;
     margin-top: 1.5rem;
     padding: 1.1rem;
     border-radius: 12px;
@@ -122,12 +123,12 @@
   }
   
   .highlighted-mood:hover {
-    transform: scale(1.03);
+    transform: scale(1.04);
   }
   
   .highlighted-mood h3 {
     margin: 0;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     color: #2d6a4f;
     font-weight: 600;
   }

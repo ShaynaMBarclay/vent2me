@@ -7,6 +7,7 @@ const moods = ['Happy', 'Sad', 'Anxious', 'Excited', 'Angry', 'Calm'];
 function Journal() {
   const [selectedMood, setSelectedMood] = useState('');
   const [customMood, setCustomMood] = useState('');
+  const [highlightedMood, setHighlightedMood] = useState('');
   const [entry, setEntry] = useState('');
   const [isListening, setIsListening] = useState(false);
   const recognitionRef = useRef(null);
