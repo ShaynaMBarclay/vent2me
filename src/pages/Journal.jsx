@@ -74,9 +74,23 @@ function Journal() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const mood = selectedMood;
-    console.log('Mood:', mood);
-    console.log('Entry:', entry);
+    const mood = selectedMood || customMood.trim();
+    if (!mood || !entry.trim()) return;
+  
+    const newEntry = {
+      id: Date.now(),
+      mood,
+      text: entry.trim(),
+      date: new Date().toISOString(),
+    };
+  
+    // Get existing entries from localStorage
+    const existingEntries = JSON.parse(localStorage.getItem('journalEntries')) || [];
+  
+    // Save updated list
+    localStorage.setItem('journalEntries', JSON.stringify([newEntry, ...existingEntries]));
+  
+    // Clear form inputs
     setSelectedMood('');
     setCustomMood('');
     setEntry('');
@@ -89,8 +103,12 @@ function Journal() {
         <button onClick={() => navigate('/')} className="journalhome-button">
           🏠
         </button>
+        <button onClick={() => navigate('/history')} className="history-button">
+        📖 
+</button>
         <h2>How are you feeling today?</h2>
       </div>
+
 
       {/* Mood Buttons */}
       <div className="mood-buttons">

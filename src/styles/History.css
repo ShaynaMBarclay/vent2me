@@ -1,0 +1,66 @@
+.history-container {
+    padding: 2rem;
+    background-color: #fefaf6;
+    min-height: 100vh;
+    font-family: 'Georgia', serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .history-header {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #4e3d2c;
+  }
+  
+  .entries-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+  }
+  
+  .journal-entry-card {
+    background: #fffef9;
+    border: 1px solid #e0d6c6;
+    border-radius: 8px;
+    box-shadow: 3px 6px 12px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    width: 300px;
+    min-height: 200px;
+    position: relative;
+    transition: transform 0.2s ease;
+  }
+  
+  .journal-entry-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .entry-mood {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #a0522d;
+    margin-bottom: 0.5rem;
+  }
+  
+  .entry-date {
+    font-size: 0.8rem;
+    color: #777;
+    margin-bottom: 1rem;
+  }
+  
+  .entry-text {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.5;
+    white-space: pre-wrap;
+  }
+  
+  .book-background {
+    background-image: linear-gradient(135deg, #fffef9 25%, #f5f2eb 25%, #f5f2eb 50%, #fffef9 50%, #fffef9 75%, #f5f2eb 75%, #f5f2eb 100%);
+    background-size: 20px 20px;
+  }
+  
