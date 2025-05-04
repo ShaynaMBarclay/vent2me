@@ -22,15 +22,15 @@ function History() {
       {entries.length === 0 ? (
         <p className="no-entries">No entries yet.</p>
       ) : (
-        <ul className="entry-list">
+        <div className="entries-grid">
           {entries.map((entry) => (
-            <li key={entry.id} className="entry-item">
+            <div key={entry.id} className="journal-entry-card">
               <div className="entry-mood">Mood: <strong>{entry.mood}</strong></div>
               <div className="entry-date">{new Date(entry.date).toLocaleString()}</div>
               <p className="entry-text">{entry.text}</p>
-            </li>
+            </div>
           ))}
-        </ul>
+        </div>
       )}
     </div>
   );

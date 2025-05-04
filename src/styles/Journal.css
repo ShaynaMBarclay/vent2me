@@ -89,6 +89,9 @@
   .journalhome-button:hover {
     background-color: #ff7b89;
   }
+  .history-button:hover {
+    background-color: #ff7b89;
+  }
 
   .mood-button {
     background-color: #c2fbd7;
