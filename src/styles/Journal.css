@@ -95,14 +95,14 @@
     border-radius: 8px;
     cursor: pointer;
     transition: 0.3s ease, transform 0.3s ease;
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
   
   .mood-button.selected {
     background-color: #79e3a5;
     font-weight: bold;
     transform: scale(1.1);
-    font-size: 1.3rem;
+    font-size: 1.4rem;
   }
   
   .mood-button.dimmed {
@@ -110,3 +110,35 @@
     transform: scale(0.9);
   }
   
+  .highlighted-mood {
+    margin-top: 1.5rem;
+    padding: 1.1rem;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #e0fbe2, #ffb6b9);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    animation: fadeIn 0.3s ease-in-out;
+    transition: transform 0.3s ease;
+  }
+  
+  .highlighted-mood:hover {
+    transform: scale(1.03);
+  }
+  
+  .highlighted-mood h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #2d6a4f;
+    font-weight: 600;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
