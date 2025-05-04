@@ -10,9 +10,9 @@ function Journal() {
   const [entry, setEntry] = useState('');
   const [isListening, setIsListening] = useState(false);
   const recognitionRef = useRef(null);
+  const isListeningRef = useRef(false); // 🔧 New ref to track up-to-date listening state
   const navigate = useNavigate();
 
-  // Voice recognition setup
   useEffect(() => {
     if (!('webkitSpeechRecognition' in window || 'SpeechRecognition' in window)) {
       alert('Sorry, your browser does not support voice-to-text.');
@@ -29,8 +29,6 @@ function Journal() {
 
     recognition.onresult = (event) => {
       let interimTranscript = '';
-
-      // Loop through results
       for (let i = event.resultIndex; i < event.results.length; ++i) {
         const result = event.results[i];
         if (result.isFinal) {
@@ -39,23 +37,22 @@ function Journal() {
           interimTranscript += result[0].transcript;
         }
       }
-
-      // Update the entry with final and interim text
       setEntry(finalTranscript + interimTranscript);
     };
 
     recognition.onend = () => {
-      if (isListening) {
-        recognition.start(); // keep listening if needed
+      if (isListeningRef.current) {
+        recognition.start(); // 🔁 Restart only if listening should continue
       }
     };
 
     recognitionRef.current = recognition;
-  }, [isListening]);
+  }, []);
 
   const startListening = () => {
     if (recognitionRef.current && !isListening) {
       setIsListening(true);
+      isListeningRef.current = true; // ✅ Sync ref
       recognitionRef.current.start();
     }
   };
@@ -63,7 +60,9 @@ function Journal() {
   const stopListening = () => {
     if (recognitionRef.current && isListening) {
       setIsListening(false);
+      isListeningRef.current = false; // ✅ Sync ref
       recognitionRef.current.stop();
+      setEntry((prev) => prev.trim());
     }
   };
 
@@ -72,7 +71,7 @@ function Journal() {
     const mood = customMood || selectedMood;
     console.log('Mood:', mood);
     console.log('Entry:', entry);
-    // You can save to localStorage or backend later
+    // Save entry later to backend/localStorage
     setSelectedMood('');
     setCustomMood('');
     setEntry('');
@@ -80,7 +79,7 @@ function Journal() {
 
   return (
     <div className="journal-container">
-      {/* Header with Home Button */}
+      {/* Header */}
       <div className="journal-header">
         <button onClick={() => navigate('/')} className="home-button">
           🏠 Home
@@ -109,7 +108,6 @@ function Journal() {
         onChange={(e) => setCustomMood(e.target.value)}
       />
 
-      {/* Journal Entry */}
       <textarea
         className="journal-entry"
         placeholder="Write your thoughts here..."
@@ -117,7 +115,7 @@ function Journal() {
         onChange={(e) => setEntry(e.target.value)}
       />
 
-      {/* Action Buttons */}
+      {/* Voice Controls & Save */}
       <div className="journal-actions">
         <button onClick={startListening} className="voice-button" disabled={isListening}>
           🎙️ Speak
