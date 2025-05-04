@@ -88,4 +88,25 @@
     background-color: #ff7b89;
   }
 
+  .mood-button {
+    background-color: #c2fbd7;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease, transform 0.3s ease;
+    font-size: 1rem;
+  }
+  
+  .mood-button.selected {
+    background-color: #79e3a5;
+    font-weight: bold;
+    transform: scale(1.1);
+    font-size: 1.3rem;
+  }
+  
+  .mood-button.dimmed {
+    opacity: 0.5;
+    transform: scale(0.9);
+  }
   

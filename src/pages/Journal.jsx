@@ -87,25 +87,35 @@ function Journal() {
         <h2>How are you feeling today?</h2>
       </div>
 
-      {/* Mood Selection */}
+      
+      {/* Mood Buttons */}
       <div className="mood-buttons">
-        {moods.map((mood) => (
-          <button
-            key={mood}
-            className={selectedMood === mood ? 'mood-button selected' : 'mood-button'}
-            onClick={() => setSelectedMood(mood)}
-          >
-            {mood}
-          </button>
-        ))}
+        {moods.map((mood) => {
+          const isSelected =
+            selectedMood === mood ||
+            (!selectedMood && customMood.toLowerCase() === mood.toLowerCase());
+          return (
+            <button
+              key={mood}
+              className={`mood-button ${
+                isSelected ? 'selected' : selectedMood || customMood ? 'dimmed' : ''
+              }`}
+              onClick={() => setSelectedMood(mood)}
+            >
+              {mood}
+            </button>
+          );
+        })}
       </div>
 
+     {/* custom mood input */}
       <input
         className="custom-mood"
         type="text"
         placeholder="Or type your mood..."
         value={customMood}
         onChange={(e) => setCustomMood(e.target.value)}
+        
       />
 
       <textarea
