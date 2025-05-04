@@ -22,8 +22,9 @@ function Journal() {
       const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
       const recognition = new SpeechRecognition();
       recognition.lang = 'en-US';
-      recognition.continuous = false;
-      recognition.interimResults = false;
+      recognition.continuous = true;
+      recognition.interimResults = true;
+
   
       recognition.onresult = (event) => {
         const transcript = event.results[0][0].transcript;
@@ -32,8 +33,10 @@ function Journal() {
       };
   
       recognition.onend = () => {
-        setIsListening(false);
-      };
+        if (isListening) {
+            recognition.start(); // 🔄 Restart listening if still enabled
+          }
+        };
   
       recognitionRef.current = recognition;
     }, []);
@@ -44,6 +47,13 @@ function Journal() {
         recognitionRef.current.start();
       }
     };
+
+    const stopListening = () => {
+        if (recognitionRef.current && isListening) {
+          setIsListening(false);
+          recognitionRef.current.stop();
+        }
+      };
   
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -87,6 +97,9 @@ function Journal() {
           <button onClick={startListening} className="voice-button">
             🎙️ Speak
           </button>
+          <button onClick={stopListening} className="voice-button">
+         🛑 Stop
+        </button>
           <button onClick={handleSubmit} className="submit-button">
             Save Entry
           </button>
