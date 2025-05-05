@@ -5,3 +5,8 @@
 @import './Journal.css';
 @import './History.css';
 @import './Error.css';
+
+body {
+    margin: 0;
+    overflow: hidden; /* Temporarily hide overflow to see if it helps */
+}
