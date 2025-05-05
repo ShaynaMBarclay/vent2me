@@ -77,7 +77,7 @@
 /* Media query for small screens (e.g., max-width: 600px) */
 @media (max-width: 600px) {
   .home-title {
-      font-size: 4rem; /* Smaller title */
+      font-size: 3rem; /* Smaller title */
       margin-bottom: 3rem;
   }
 
