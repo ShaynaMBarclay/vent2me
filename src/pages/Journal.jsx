@@ -100,6 +100,7 @@ function Journal() {
         setError("You've exceeded your advice usage for now, please check back later");
       } else {
         setError('Something went wrong. Please try again later.');
+        setAiResponse('')
       }
     }
   };
@@ -203,14 +204,14 @@ function Journal() {
         </button>
       </div>
 
+        <ErrorMessage message={error} />
+      
       {aiResponse && (
         <div className="ai-response">
           <h3>Here's some advice:</h3>
           <p>{aiResponse}</p>
         </div>
       )}
-
-  <ErrorMessage message={error} />
 
     </div>
   );
