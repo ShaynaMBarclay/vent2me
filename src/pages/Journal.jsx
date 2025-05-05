@@ -14,7 +14,6 @@ function Journal() {
   const [dialogflowResponse, setDialogflowResponse] = useState('');
   const navigate = useNavigate();
 
-  // Setup speech recognition once on mount
   useEffect(() => {
     if (!('webkitSpeechRecognition' in window || 'SpeechRecognition' in window)) {
       alert('Sorry, your browser does not support voice-to-text.');
@@ -72,7 +71,6 @@ function Journal() {
     }
   };
 
-  // NEW: Function to call Dialogflow API
   const handleDialogflowResponse = async () => {
     const mood = selectedMood || customMood.trim();
     if (!mood || !entry.trim()) return;
@@ -86,15 +84,30 @@ function Journal() {
         body: JSON.stringify({ text: entry.trim() }),
       });
 
-      const data = await res.json();
-      setDialogflowResponse(data.message); // Display the response from Dialogflow
+      const text = await res.text();
+
+      if (!text) {
+        setDialogflowResponse("Oops! Got an empty response from Dialogflow.");
+        return;
+      }
+
+      let data;
+      try {
+        data = JSON.parse(text);
+      } catch (parseError) {
+        console.error('Failed to parse Dialogflow JSON:', parseError);
+        setDialogflowResponse("Oops! Couldn't understand Dialogflow's response.");
+        return;
+      }
+
+      setDialogflowResponse(data.message || "Dialogflow didn't respond with a message.");
+
     } catch (error) {
       console.error('Dialogflow fetch failed:', error);
       setDialogflowResponse("Oops! Couldn't get a response from Dialogflow.");
     }
   };
 
-  // Handle submit without AI integration
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -118,14 +131,12 @@ function Journal() {
 
   return (
     <div className="journal-container">
-      {/* Header with Home Button */}
       <div className="journal-header">
         <button onClick={() => navigate('/')} className="journalhome-button">🏠</button>
         <button onClick={() => navigate('/history')} className="history-button">📖</button>
         <h2>How are you feeling today?</h2>
       </div>
 
-      {/* Mood Buttons */}
       <div className="mood-buttons">
         {moods.map((mood) => (
           <button
@@ -138,7 +149,6 @@ function Journal() {
         ))}
       </div>
 
-      {/* Custom Mood Input */}
       <input
         className="custom-mood"
         type="text"
@@ -153,7 +163,6 @@ function Journal() {
         }}
       />
 
-      {/* Highlighted Mood */}
       {selectedMood && (
         <div className="highlighted-mood">
           <p>Your mood:</p>
@@ -161,7 +170,6 @@ function Journal() {
         </div>
       )}
 
-      {/* Journal Entry */}
       <textarea
         className="journal-entry"
         placeholder="Write your thoughts here...Or speak them!"
@@ -169,7 +177,6 @@ function Journal() {
         onChange={(e) => setEntry(e.target.value)}
       />
 
-      {/* Action Buttons */}
       <div className="journal-actions">
         <button onClick={startListening} className="voice-button" disabled={isListening}>
           🎙️ Speak
@@ -185,7 +192,6 @@ function Journal() {
         </button>
       </div>
 
-      {/* Dialogflow Response */}
       {dialogflowResponse && (
         <div className="dialogflow-response">
           <h4>AI says:</h4>

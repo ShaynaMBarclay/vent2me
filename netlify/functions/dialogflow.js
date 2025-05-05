@@ -1,10 +1,8 @@
-const dialogflow = require('dialogflow');
-
 exports.handler = async (event) => {
   try {
     const { text } = JSON.parse(event.body);
+    const projectId = 'yourjournalai-9ndc';
 
-    const projectId = 'yourjournalai-9ndc'; 
     const sessionClient = new dialogflow.SessionsClient();
     const sessionPath = sessionClient.projectAgentSessionPath(projectId, 'unique-session-id');
 
@@ -12,7 +10,7 @@ exports.handler = async (event) => {
       session: sessionPath,
       queryInput: {
         text: {
-          text: text,
+          text,
           languageCode: 'en-US',
         },
       },
@@ -23,8 +21,9 @@ exports.handler = async (event) => {
 
     return {
       statusCode: 200,
-      body: JSON.stringify({ message: result.fulfillmentText }),
+      body: JSON.stringify({ message: result.fulfillmentText || 'No response from Dialogflow.' }),
     };
+
   } catch (error) {
     console.error('Dialogflow API call failed:', error);
     return {
