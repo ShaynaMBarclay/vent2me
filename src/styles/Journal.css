@@ -183,3 +183,12 @@
     }
   }
   
+  .enter-button {
+    background-color: #ffb6b9;
+    color: white;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
