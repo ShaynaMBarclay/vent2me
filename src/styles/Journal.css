@@ -192,3 +192,7 @@
     cursor: pointer;
     transition: background-color 0.3s;
   }
+
+  .enter-button:hover {
+    background-color: #ff7b89;
+  }
