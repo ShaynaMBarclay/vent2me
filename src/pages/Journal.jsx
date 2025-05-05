@@ -12,6 +12,7 @@ function Journal() {
   const [isListening, setIsListening] = useState(false);
   const recognitionRef = useRef(null);
   const isListeningRef = useRef(false);
+  const [aiResponse, setAiResponse] = useState('');
   const navigate = useNavigate();
 
   // Setup speech recognition once on mount
@@ -72,7 +73,7 @@ function Journal() {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const mood = selectedMood || customMood.trim();
     if (!mood || !entry.trim()) return;
@@ -84,17 +85,27 @@ function Journal() {
       date: new Date().toISOString(),
     };
   
-    // Get existing entries from localStorage
     const existingEntries = JSON.parse(localStorage.getItem('journalEntries')) || [];
-  
-    // Save updated list
     localStorage.setItem('journalEntries', JSON.stringify([newEntry, ...existingEntries]));
   
-    // Clear form inputs
+    // Send to AI function
+    try {
+      const res = await fetch('/.netlify/functions/ai-response', {
+        method: 'POST',
+        body: JSON.stringify({ entryText: newEntry.text }),
+      });
+      const data = await res.json();
+      setAiResponse(data.message);
+    } catch (error) {
+      console.error('AI fetch failed:', error);
+      setAiResponse("Oops! Couldn't get a response from the AI.");
+    }
+  
     setSelectedMood('');
     setCustomMood('');
     setEntry('');
   };
+  
 
   return (
     <div className="journal-container">
@@ -166,6 +177,14 @@ function Journal() {
           Save Entry
         </button>
       </div>
+      
+      {/* AI Response */}
+   {aiResponse && (
+  <div className="ai-response">
+    <h4>AI says:</h4>
+    <p>{aiResponse}</p>
+  </div>
+   )}
     </div>
   );
 }
