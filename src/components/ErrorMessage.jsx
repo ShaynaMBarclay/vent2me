@@ -5,7 +5,7 @@ const ErrorMessage = ({ message }) => {
   if (!message) return null;
 
   return (
-    <div className="error-message">
+    <div className="error-box">
       ⚠️ {message}
     </div>
   );
