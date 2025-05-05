@@ -17,7 +17,9 @@ exports.handler = async (event) => {
     };
 
     const responses = await sessionClient.detectIntent(request);
+    console.log('Dialogflow responses:', responses);
     const result = responses[0].queryResult;
+    console.log('Dialogflow result:', result); 
 
     return {
       statusCode: 200,
