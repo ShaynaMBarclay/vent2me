@@ -121,7 +121,7 @@ function Journal() {
     // Store entry in localStorage (optional)
     const existingEntries = JSON.parse(localStorage.getItem('journalEntries')) || [];
     existingEntries.unshift(newEntry);
-    localStorage.setItem('journalEntries', JSON.stringify([newEntry, ...existingEntries]));
+    localStorage.setItem('journalEntries', JSON.stringify(existingEntries));
 
     // Reset states
     setSelectedMood('');
