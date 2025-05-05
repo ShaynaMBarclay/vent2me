@@ -15,7 +15,6 @@ function Journal() {
     const [entries, setEntries] = useState([]);
     const [isListening, setIsListening] = useState(false);
     const [aiResponse, setAiResponse] = useState('');
-    const [isAiVisible, setIsAiVisible] = useState(false);
     const recognitionRef = useRef(null);
     const isListeningRef = useRef(false);
     const [error, setError] = useState('');
@@ -95,7 +94,6 @@ function Journal() {
             }
 
             setAiResponse(response.data.reply);
-            setIsAiVisible(true);
             setError(''); // clear any previous error
         } catch (err) {
             if (err.response && err.response.status === 429) {
@@ -103,14 +101,8 @@ function Journal() {
             } else {
                 setError('Something went wrong. Please try again later.');
                 setAiResponse('');
-                setIsAiVisible(false);
             }
         }
-    };
-
-    const handleCloseAi = () => {
-        setIsAiVisible(false);
-        setAiResponse('');
     };
 
     const handleSubmit = (e) => {
@@ -215,15 +207,10 @@ function Journal() {
 
             <ErrorMessage message={error} />
 
-            {isAiVisible && (
-                <div className="ai-overlay" onClick={handleCloseAi}> 
-                    <div className="ai-response" onClick={(e) => e.stopPropagation()}>
-                        <button className="close-ai-button" onClick={handleCloseAi}>
-                            X
-                        </button>
-                        <h3>Here's some advice:</h3>
-                        <p>{aiResponse}</p>
-                    </div>
+            {aiResponse && (
+                <div className="ai-response below-buttons"> 
+                    <h3>Here's some advice:</h3>
+                    <p>{aiResponse}</p>
                 </div>
             )}
 

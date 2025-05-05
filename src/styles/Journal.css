@@ -159,100 +159,31 @@
     }
   }
 
-  .ai-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent black */
-    z-index: 999; /* Below the ai-response but above other content */
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    pointer-events: auto; /* Make it clickable */
-  }
-
   .ai-response {
-    background-color: #79e3a52d;
-    border: 3px solid #5bda90;
-    padding: 2rem;
-    border-radius: 1rem; /* More standard rounded value */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow for pop-out */
-    animation: slideInRight 0.3s ease-out forwards;
-    position: fixed; /* Fixed position relative to the viewport */
-    top: 50%; /* Center vertically initially */
-    right: 2rem; /* Position from the right */
-    transform: translateY(-50%); /* Adjust for true vertical centering */
-    width: 20rem;
-    max-height: 60vh; /* Allow more vertical space */
-    z-index: 1000; /* Very high z-index to be on top */
-    overflow-y: auto;
+    background-color: #f0f8ff; /* Light background color */
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    margin-top: 1rem; /* Space below the buttons */
     font-family: "Ubuntu", sans-serif;
-    font-size: 15px;
-    color: grey;
-    cursor: pointer; /* Indicate it's interactive (for clicking out - though we'll handle this differently) */
+    font-size: 1rem;
+    color: #555;
+    overflow-y: auto;
+    max-height: 300px; /* Adjust as needed */
 }
 
-.close-ai-button {
-  position: absolute;
-  top: 0.5rem;
-  right: 0.5rem;
-  background: none;
-  border: none;
-  color: #333;
-  font-size: 1.5rem;
-  cursor: pointer;
-  padding: 0;
-  line-height: 1;
-  z-index: 1001; /* Ensure it's above the ai-response content */
-}
-
-.close-ai-button:hover {
-  color: #000;
-}
-
-.ai-response::-webkit-scrollbar {
-  width: 5px;
-}
-
-.ai-response::-webkit-scrollbar-thumb {
-  background-color: #888;
-  border-radius: 9px;
-}
-
-.ai-response::-webkit-scrollbar-track {
-  background-color: #f1f1f1;
-}
-
-.ai-response::-webkit-scrollbar-thumb:hover {
-  background-color: #555;
-}
-
-@keyframes slideInRight {
-  from {
-      transform: translateX(50px) translateY(-50%);
-      opacity: 0;
-  }
-  to {
-      transform: translateX(0) translateY(-50%);
-      opacity: 1;
-  }
-}
-
-.ai-response h4 {
-  margin: 0 0 0.5rem;
-  color: #4a90e2;
-  font-weight: bold;
-  font-family: "Ubuntu", sans-serif;
+.ai-response h3 {
+    color: #4a90e2;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
 }
 
 .ai-response p {
-  margin: 0;
-  line-height: 1.6;
-  color: #333;
-  font-family: "Ubuntu", sans-serif;
-  white-space: pre-wrap;
+    margin: 0;
+    line-height: 1.6;
 }
   
   /* Optional fade-in animation */
@@ -332,39 +263,17 @@
       margin: 0.1rem;
   }
 
-  .ai-response {
-      width: 60%; /* Take up more width */
-      max-width: 95%;
-      right: 0.5rem;
-      top: 8rem;
-      left: 0.5rem; /* Position from both edges for centering */
-      margin: 0 auto; /* Center horizontally */
-      bottom: 5rem; /* Closer to the bottom */
-      max-height: 50vh; /* Adjust max height */
-      font-size: 14px;
-      background-color: #bee6ce;
-  }
+  .ai-response.below-buttons {
+    font-size: 0.9rem;
+    padding: 0.8rem;
+    margin: 0.8rem 0;
+    border-radius: 8px;
+}
 
-  @keyframes slideInRight {
-      from {
-          transform: translateX(30px) translateY(0);
-          opacity: 0;
-      }
-      to {
-          transform: translateX(0) translateY(0);
-          opacity: 1;
-      }
-  }
-
-  .ai-response h4 {
-      font-size: 1rem;
-      margin-bottom: 0.3rem;
-  }
-
-  .ai-response p {
-      font-size: 0.85rem;
-      line-height: 1.3;
-  }
+.ai-response.below-buttons h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+}
 }
 
 .highlighted-mood {
