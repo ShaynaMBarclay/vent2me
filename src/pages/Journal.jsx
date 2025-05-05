@@ -82,7 +82,7 @@ function Journal() {
     if (!mood || !entry.trim()) return;
   
     try {
-      const response = await axios.post('https://vent2meserver.onrender.com/gemini', {
+      const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/gemini`, {
         journalEntry: entry,
       });
 
@@ -112,7 +112,7 @@ function Journal() {
 
     const newEntry = {
       id: uuidv4(),
-      mood,
+      mood: selectedMood || customMood.trim(),
       text: entry.trim(),
       aiResponse: aiResponse.trim() || '',
       date: new Date().toISOString(),
