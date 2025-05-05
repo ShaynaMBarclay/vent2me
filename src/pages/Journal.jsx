@@ -11,7 +11,6 @@ function Journal() {
   const [isListening, setIsListening] = useState(false);
   const recognitionRef = useRef(null);
   const isListeningRef = useRef(false);
-  const [dialogflowResponse, setDialogflowResponse] = useState('');
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -68,43 +67,6 @@ function Journal() {
       isListeningRef.current = false;
       recognitionRef.current.stop();
       setEntry((prev) => prev.trim());
-    }
-  };
-
-  const handleDialogflowResponse = async () => {
-    const mood = selectedMood || customMood.trim();
-    if (!mood || !entry.trim()) return;
-
-    try {
-      const res = await fetch('/.netlify/functions/dialogflow', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ text: entry.trim() }),
-      });
-
-      const text = await res.text();
-
-      if (!text) {
-        setDialogflowResponse("Oops! Got an empty response from Dialogflow.");
-        return;
-      }
-
-      let data;
-      try {
-        data = JSON.parse(text);
-      } catch (parseError) {
-        console.error('Failed to parse Dialogflow JSON:', parseError);
-        setDialogflowResponse("Oops! Couldn't understand Dialogflow's response.");
-        return;
-      }
-
-      setDialogflowResponse(data.message || "Dialogflow didn't respond with a message.");
-
-    } catch (error) {
-      console.error('Dialogflow fetch failed:', error);
-      setDialogflowResponse("Oops! Couldn't get a response from Dialogflow.");
     }
   };
 
@@ -184,20 +146,13 @@ function Journal() {
         <button onClick={stopListening} className="voice-button" disabled={!isListening}>
           🛑 Stop
         </button>
-        <button onClick={handleDialogflowResponse} className="enter-button">
-          ⏎ Enter
-        </button>
+        {/* <button onClick={handleGeminiResponse} className="enter-button">
+        💬 Get Feedback
+        </button> */}
         <button onClick={handleSubmit} className="submit-button">
           Save Entry
         </button>
       </div>
-
-      {dialogflowResponse && (
-        <div className="dialogflow-response">
-          <h4>AI says:</h4>
-          <p>{dialogflowResponse}</p>
-        </div>
-      )}
     </div>
   );
 }
