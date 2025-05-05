@@ -11,7 +11,7 @@ function Journal() {
   const [isListening, setIsListening] = useState(false);
   const recognitionRef = useRef(null);
   const isListeningRef = useRef(false);
-  const [aiResponse, setAiResponse] = useState('');
+  const [dialogflowResponse, setDialogflowResponse] = useState('');
   const navigate = useNavigate();
 
   // Setup speech recognition once on mount
@@ -72,26 +72,30 @@ function Journal() {
     }
   };
 
-  // NEW: Just get AI feedback without saving
-  const handleAIPreview = async () => {
+  // NEW: Function to call Dialogflow API
+  const handleDialogflowResponse = async () => {
     const mood = selectedMood || customMood.trim();
     if (!mood || !entry.trim()) return;
 
     try {
-      const res = await fetch('/.netlify/functions/ai-response', {
+      const res = await fetch('/.netlify/functions/dialogflow', {
         method: 'POST',
-        body: JSON.stringify({ entryText: entry.trim() }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ text: entry.trim() }),
       });
 
       const data = await res.json();
-      setAiResponse(data.message);
+      setDialogflowResponse(data.message); // Display the response from Dialogflow
     } catch (error) {
-      console.error('AI preview failed:', error);
-      setAiResponse("Oops! Couldn't get a preview from the AI.");
+      console.error('Dialogflow fetch failed:', error);
+      setDialogflowResponse("Oops! Couldn't get a response from Dialogflow.");
     }
   };
 
-  const handleSubmit = async (e) => {
+  // Handle submit without AI integration
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     const mood = selectedMood || customMood.trim();
@@ -106,22 +110,6 @@ function Journal() {
 
     const existingEntries = JSON.parse(localStorage.getItem('journalEntries')) || [];
     localStorage.setItem('journalEntries', JSON.stringify([newEntry, ...existingEntries]));
-
-    try {
-      const res = await fetch('/.netlify/functions/ai-response', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ entryText: newEntry.text }),
-      });
-
-      const data = await res.json();
-      setAiResponse(data.message);
-    } catch (error) {
-      console.error('AI fetch failed:', error);
-      setAiResponse("Oops! Couldn't get a response from the AI.");
-    }
 
     setSelectedMood('');
     setCustomMood('');
@@ -189,19 +177,19 @@ function Journal() {
         <button onClick={stopListening} className="voice-button" disabled={!isListening}>
           🛑 Stop
         </button>
-        <button onClick={handleAIPreview} className="enter-button">
-          ⏎ Enter (AI Feedback)
+        <button onClick={handleDialogflowResponse} className="enter-button">
+          ⏎ Enter
         </button>
         <button onClick={handleSubmit} className="submit-button">
           Save Entry
         </button>
       </div>
 
-      {/* AI Response */}
-      {aiResponse && (
-        <div className="ai-response">
+      {/* Dialogflow Response */}
+      {dialogflowResponse && (
+        <div className="dialogflow-response">
           <h4>AI says:</h4>
-          <p>{aiResponse}</p>
+          <p>{dialogflowResponse}</p>
         </div>
       )}
     </div>
