@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/Journal.css';
@@ -73,53 +72,70 @@ function Journal() {
     }
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  // NEW: Just get AI feedback without saving
+  const handleAIPreview = async () => {
     const mood = selectedMood || customMood.trim();
     if (!mood || !entry.trim()) return;
-  
+
+    try {
+      const res = await fetch('/.netlify/functions/ai-response', {
+        method: 'POST',
+        body: JSON.stringify({ entryText: entry.trim() }),
+      });
+
+      const data = await res.json();
+      setAiResponse(data.message);
+    } catch (error) {
+      console.error('AI preview failed:', error);
+      setAiResponse("Oops! Couldn't get a preview from the AI.");
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const mood = selectedMood || customMood.trim();
+    if (!mood || !entry.trim()) return;
+
     const newEntry = {
       id: Date.now(),
       mood,
       text: entry.trim(),
       date: new Date().toISOString(),
     };
-  
+
     const existingEntries = JSON.parse(localStorage.getItem('journalEntries')) || [];
     localStorage.setItem('journalEntries', JSON.stringify([newEntry, ...existingEntries]));
-  
-    // Send to AI function
+
     try {
       const res = await fetch('/.netlify/functions/ai-response', {
         method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
         body: JSON.stringify({ entryText: newEntry.text }),
       });
+
       const data = await res.json();
       setAiResponse(data.message);
     } catch (error) {
       console.error('AI fetch failed:', error);
       setAiResponse("Oops! Couldn't get a response from the AI.");
     }
-  
+
     setSelectedMood('');
     setCustomMood('');
     setEntry('');
   };
-  
 
   return (
     <div className="journal-container">
       {/* Header with Home Button */}
       <div className="journal-header">
-        <button onClick={() => navigate('/')} className="journalhome-button">
-          🏠
-        </button>
-        <button onClick={() => navigate('/history')} className="history-button">
-        📖 
-</button>
+        <button onClick={() => navigate('/')} className="journalhome-button">🏠</button>
+        <button onClick={() => navigate('/history')} className="history-button">📖</button>
         <h2>How are you feeling today?</h2>
       </div>
-
 
       {/* Mood Buttons */}
       <div className="mood-buttons">
@@ -173,18 +189,21 @@ function Journal() {
         <button onClick={stopListening} className="voice-button" disabled={!isListening}>
           🛑 Stop
         </button>
+        <button onClick={handleAIPreview} className="enter-button">
+          ⏎ Enter (AI Feedback)
+        </button>
         <button onClick={handleSubmit} className="submit-button">
           Save Entry
         </button>
       </div>
-      
+
       {/* AI Response */}
-   {aiResponse && (
-  <div className="ai-response">
-    <h4>AI says:</h4>
-    <p>{aiResponse}</p>
-  </div>
-   )}
+      {aiResponse && (
+        <div className="ai-response">
+          <h4>AI says:</h4>
+          <p>{aiResponse}</p>
+        </div>
+      )}
     </div>
   );
 }
