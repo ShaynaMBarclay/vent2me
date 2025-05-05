@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/Journal.css';
+import axios from 'axios';
 
 const moods = ['Happy', 'Sad', 'Anxious', 'Excited', 'Angry', 'Calm'];
 
@@ -9,6 +10,7 @@ function Journal() {
   const [customMood, setCustomMood] = useState('');
   const [entry, setEntry] = useState('');
   const [isListening, setIsListening] = useState(false);
+  const [aiResponse, setAiResponse] = useState('');
   const recognitionRef = useRef(null);
   const isListeningRef = useRef(false);
   const navigate = useNavigate();
@@ -70,6 +72,18 @@ function Journal() {
     }
   };
 
+  const handleGeminiResponse = async () => {
+    const mood = selectedMood || customMood.trim();
+    if (!mood || !entry.trim()) return;
+
+    try {
+      const response = await axios.post('http://localhost:3000/gemini', { journalEntry: entry });
+      setAiResponse(response.data.reply); // Set AI response
+    } catch (error) {
+      console.error('Error getting AI response:', error);
+    }
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -83,9 +97,11 @@ function Journal() {
       date: new Date().toISOString(),
     };
 
+    // Store entry in localStorage (optional)
     const existingEntries = JSON.parse(localStorage.getItem('journalEntries')) || [];
     localStorage.setItem('journalEntries', JSON.stringify([newEntry, ...existingEntries]));
 
+    // Reset states
     setSelectedMood('');
     setCustomMood('');
     setEntry('');
@@ -134,10 +150,17 @@ function Journal() {
 
       <textarea
         className="journal-entry"
-        placeholder="Write your thoughts here...Or speak them!"
+        placeholder="Write your thoughts here... Or speak them!"
         value={entry}
         onChange={(e) => setEntry(e.target.value)}
       />
+
+      {aiResponse && (
+        <div className="ai-response">
+          <h3>AI's Feedback:</h3>
+          <p>{aiResponse}</p>
+        </div>
+      )}
 
       <div className="journal-actions">
         <button onClick={startListening} className="voice-button" disabled={isListening}>
@@ -146,9 +169,9 @@ function Journal() {
         <button onClick={stopListening} className="voice-button" disabled={!isListening}>
           🛑 Stop
         </button>
-        {/* <button onClick={handleGeminiResponse} className="enter-button">
-        💬 Get Feedback
-        </button> */}
+        <button onClick={handleGeminiResponse} className="enter-button">
+          💬 Get Feedback
+        </button>
         <button onClick={handleSubmit} className="submit-button">
           Save Entry
         </button>
