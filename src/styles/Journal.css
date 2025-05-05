@@ -159,6 +159,20 @@
     }
   }
 
+  .ai-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent black */
+    z-index: 999; /* Below the ai-response but above other content */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    pointer-events: auto; /* Make it clickable */
+  }
+
   .ai-response {
     background-color: #79e3a52d;
     border: 3px solid #5bda90;
@@ -178,6 +192,24 @@
     font-size: 15px;
     color: grey;
     cursor: pointer; /* Indicate it's interactive (for clicking out - though we'll handle this differently) */
+}
+
+.close-ai-button {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: none;
+  border: none;
+  color: #333;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  z-index: 1001; /* Ensure it's above the ai-response content */
+}
+
+.close-ai-button:hover {
+  color: #000;
 }
 
 .ai-response::-webkit-scrollbar {
