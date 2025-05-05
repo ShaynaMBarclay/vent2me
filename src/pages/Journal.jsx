@@ -82,7 +82,7 @@ function Journal() {
     if (!mood || !entry.trim()) return;
   
     try {
-      const response = await axios.post('http://localhost:3000/gemini', {
+      const response = await axios.post('https://vent2meserver.onrender.com/gemini', {
         journalEntry: entry,
       });
 
