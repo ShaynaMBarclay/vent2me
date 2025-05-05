@@ -84,7 +84,7 @@ function History() {
 
     {entry.aiResponse && (
       <div className="entry-ai-response">
-        <strong>AI Response:</strong>
+        <strong>Your Advice:</strong>
         <p>{entry.aiResponse}</p>
       </div>
     )}
