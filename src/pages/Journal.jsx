@@ -1,7 +1,10 @@
 import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+import ErrorMessage from '../components/ErrorMessage';
 import '../styles/Journal.css';
 import axios from 'axios';
+import { v4 as uuidv4 } from 'uuid';
+
 
 const moods = ['Happy', 'Sad', 'Anxious', 'Excited', 'Angry', 'Calm'];
 
@@ -9,10 +12,12 @@ function Journal() {
   const [selectedMood, setSelectedMood] = useState('');
   const [customMood, setCustomMood] = useState('');
   const [entry, setEntry] = useState('');
+  const [entries, setEntries] = useState([]);
   const [isListening, setIsListening] = useState(false);
   const [aiResponse, setAiResponse] = useState('');
   const recognitionRef = useRef(null);
   const isListeningRef = useRef(false);
+  const [error, setError] = useState('');
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -75,12 +80,27 @@ function Journal() {
   const handleGeminiResponse = async () => {
     const mood = selectedMood || customMood.trim();
     if (!mood || !entry.trim()) return;
-
+  
     try {
-      const response = await axios.post('http://localhost:3000/gemini', { journalEntry: entry });
-      setAiResponse(response.data.reply); // Set AI response
-    } catch (error) {
-      console.error('Error getting AI response:', error);
+      const response = await axios.post('http://localhost:3000/gemini', {
+        journalEntry: entry,
+      });
+
+      console.log('API Response:', response);
+  
+      if (response.status === 429) {
+        setError("You've exceeded your advice usage for now, please check back later");
+        return;
+      }
+  
+      setAiResponse(response.data.reply);
+      setError(''); // clear any previous error
+    } catch (err) {
+      if (err.response && err.response.status === 429) {
+        setError("You've exceeded your advice usage for now, please check back later");
+      } else {
+        setError('Something went wrong. Please try again later.');
+      }
     }
   };
 
@@ -91,22 +111,34 @@ function Journal() {
     if (!mood || !entry.trim()) return;
 
     const newEntry = {
-      id: Date.now(),
+      id: uuidv4(),
       mood,
       text: entry.trim(),
+      aiResponse: aiResponse.trim() || '',
       date: new Date().toISOString(),
     };
 
     // Store entry in localStorage (optional)
     const existingEntries = JSON.parse(localStorage.getItem('journalEntries')) || [];
+    existingEntries.unshift(newEntry);
     localStorage.setItem('journalEntries', JSON.stringify([newEntry, ...existingEntries]));
 
     // Reset states
     setSelectedMood('');
     setCustomMood('');
     setEntry('');
+    setAiResponse('');
   };
 
+  useEffect(() => {
+    const savedEntries = JSON.parse(localStorage.getItem('journalEntries')) || [];
+    savedEntries.forEach(entry => {
+      console.log('Journal Entry:', entry.text);  // Log the journal text
+      console.log('AI Response:', entry.aiResponse);  // Log the AI response
+    });
+
+    setEntries(savedEntries);  // Set entries in state
+  }, []);
   return (
     <div className="journal-container">
       <div className="journal-header">
@@ -150,18 +182,12 @@ function Journal() {
 
       <textarea
         className="journal-entry"
-        placeholder="Write your thoughts here... Or speak them!"
+        placeholder="Write your thoughts here... Or speak them! Hit the 'Get Advice' button for some guidance. Gont need it? Dont worry! Skip it and save your entry!"
         value={entry}
         onChange={(e) => setEntry(e.target.value)}
       />
 
-      {aiResponse && (
-        <div className="ai-response">
-          <h3>AI's Feedback:</h3>
-          <p>{aiResponse}</p>
-        </div>
-      )}
-
+      
       <div className="journal-actions">
         <button onClick={startListening} className="voice-button" disabled={isListening}>
           🎙️ Speak
@@ -170,12 +196,22 @@ function Journal() {
           🛑 Stop
         </button>
         <button onClick={handleGeminiResponse} className="enter-button">
-          💬 Get Feedback
+          💬 Get Advice
         </button>
         <button onClick={handleSubmit} className="submit-button">
           Save Entry
         </button>
       </div>
+
+      {aiResponse && (
+        <div className="ai-response">
+          <h3>Here's some advice:</h3>
+          <p>{aiResponse}</p>
+        </div>
+      )}
+
+  <ErrorMessage message={error} />
+
     </div>
   );
 }

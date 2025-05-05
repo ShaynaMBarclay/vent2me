@@ -27,12 +27,19 @@ function History() {
   const handleImport = (event) => {
     const file = event.target.files[0];
     if (!file) return;
-
+  
     const reader = new FileReader();
     reader.onload = (e) => {
       try {
-        const importedEntries = JSON.parse(e.target.result);
+        let importedEntries = JSON.parse(e.target.result);
+  
         if (Array.isArray(importedEntries)) {
+          // Regenerate IDs to avoid duplicates
+          importedEntries = importedEntries.map(entry => ({
+            ...entry,
+            id: uuidv4(),
+          }));
+  
           localStorage.setItem('journalEntries', JSON.stringify(importedEntries));
           setEntries(importedEntries);
           alert('Entries imported successfully!');
@@ -45,7 +52,6 @@ function History() {
     };
     reader.readAsText(file);
   };
-
 
   return (
     <div className="history-container">
@@ -69,13 +75,21 @@ function History() {
         <p className="no-entries">No entries yet.</p>
       ) : (
         <div className="entries-grid">
-          {entries.map((entry) => (
-            <div key={entry.id} className="journal-entry-card">
-              <div className="entry-mood">Mood: <strong>{entry.mood}</strong></div>
-              <div className="entry-date">{new Date(entry.date).toLocaleString()}</div>
-              <p className="entry-text">{entry.text}</p>
-            </div>
-          ))}
+       
+       {entries.map((entry) => (
+  <div key={entry.id} className="journal-entry-card">
+    <div className="entry-mood">Mood: <strong>{entry.mood}</strong></div>
+    <div className="entry-date">{new Date(entry.date).toLocaleString()}</div>
+    <p className="entry-text">{entry.text}</p>
+
+    {entry.aiResponse && (
+      <div className="entry-ai-response">
+        <strong>AI Response:</strong>
+        <p>{entry.aiResponse}</p>
+      </div>
+    )}
+  </div>
+))}
         </div>
       )}
     </div>
