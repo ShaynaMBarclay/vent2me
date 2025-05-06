@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { v4 as uuidv4 } from 'uuid';
 import '../styles/History.css';
 
 function History() {
@@ -14,7 +15,7 @@ function History() {
   useEffect(() => {
     entries.forEach(entry => console.log("Entry ID in History:", entry.id));
   }, [entries]);
-  
+
 
   const handleExport = () => {
     const data = JSON.stringify(entries, null, 2);
@@ -45,8 +46,9 @@ function History() {
             id: uuidv4(),
           }));
   
-          localStorage.setItem('journalEntries', JSON.stringify(importedEntries));
-          setEntries(importedEntries);
+          const combined = [...entries, ...importedEntries];
+     localStorage.setItem('journalEntries', JSON.stringify(combined));
+     setEntries(combined);
           alert('Entries imported successfully!');
         } else {
           alert('Invalid file format.');
