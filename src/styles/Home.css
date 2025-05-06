@@ -10,6 +10,7 @@
     opacity: 0; 
     animation: fadeIn 1.5s ease-out forwards;
     overflow-y: auto;
+    position: relative;
   
   }
   
@@ -53,6 +54,18 @@
   
   .home-button:hover {
     background-color: #ff7b89;
+  }
+  .settings-link-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    font-size: 4rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    z-index: 10;
   }
 
   /* Keyframes for the animations */
@@ -99,6 +112,7 @@
   }
 }
 
+
 /* You might also consider adjustments for even smaller screens */
 @media (max-width: 400px) {
   .home-title {
@@ -112,13 +126,20 @@
 }
 
 .settings-link-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
   padding: 0;
   background: transparent;
   border: none;
-  font-size: 2.5rem; 
+  font-size: 3rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  margin-top: 1rem;
+  z-index: 10;
+}
+
+.settings-link-button:hover {
+  background-color: transparent;
 }
 
 .settings-link-button:hover {
