@@ -1,227 +1,284 @@
-
 .journal-container {
-    max-width: 600px;
-    margin: 2rem auto;
-    padding: 4rem 5rem 4rem 3rem;
-    border-radius: 12px;
-    background-color: #fffdfc;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  
-  }
-  
-  h2 {
-    text-align: center;
-    color: #5c5470;
-    margin-bottom: 1.3rem;
-    font-family: "Ubuntu", sans-serif;
-    font-size: 30px;
-  }
-  
-  .mood-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.6rem;
-    justify-content: center;
-    margin-bottom: 1.4rem;
-    
-  }
-  
-  .mood-button {
-    background-color: #c2fbd7;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.3s ease;
-    font-family: "Ubuntu", sans-serif;
-    font-weight: 650;
-  }
-  
-  .mood-button.selected {
-    background-color: #79e3a5;
-    font-weight: bold;
-  }
-  
-  .custom-mood {
-    display: flex;
-      justify-content: center;
-      align-items: center;
-    padding: 0.7rem;
-    margin: 0 auto 0.8rem;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-    font-family: "Ubuntu", sans-serif;
-    font-size: 14px;
-    width: 220px;           
-    box-sizing: border-box;
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 4rem 5rem 4rem 3rem;
+  border-radius: 12px;
+  background-color: #fffdfc;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
 
-  }
-  
-  .journal-entry {
-    width: 100%;
-    max-width: 100%;
-    height: 150px;
-    padding: 1rem;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-    margin-bottom: 1rem;
-    resize: none;
-    font-size: 1rem;
-    text-align: center; /* Center the text within the textarea */
-    margin-left: auto; /* Center the textarea horizontally */
-    margin-right: auto;
-    display: block;
-  }
+h2 {
+  text-align: center;
+  color: #5c5470;
+  margin-bottom: 1.3rem;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 30px;
+}
 
-  
-  .journal-actions {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .voice-button, .submit-button {
-    background-color: #ffb6b9;
-    color: white;
-    border: none;
-    padding: 0.7rem 1.5rem;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .voice-button:hover, .submit-button:hover {
-    background-color: #ff7b89;
-  }
+.mood-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+  margin-bottom: 1.4rem;
+}
 
-  .journalhome-button,
-  .history-button {
-    background-color: #ffb6b99b;
-    color: white;
-    margin: 0.2rem;
-    border: none;
-    padding: 0.4rem;
-    font-size: 1.7rem;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+/* Animation for zoom-in effect */
+@keyframes zoomIn {
+  from {
+    transform: scale(0);
+    opacity: 0;
   }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
 
-  .journalhome-button:hover {
-    background-color: #ff7b89;
-  }
-  .history-button:hover {
-    background-color: #ff7b89;
-  }
+.custom-mood {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.7rem;
+  margin: 0 auto 0.8rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 14px;
+  width: 220px;
+  box-sizing: border-box;
+}
 
-  .mood-button {
-    background-color: #c2fbd7;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.3s ease, transform 0.3s ease;
-    font-size: 1.2rem;
-  }
-  
-  .mood-button.selected {
-    background-color: #79e3a5;
-    font-weight: bold;
-    transform: scale(1.1);
-    font-size: 1.4rem;
-  }
-  
-  .mood-button.dimmed {
-    opacity: 0.5;
-    transform: scale(0.9);
-  }
-  
-  .highlighted-mood {
-    margin-left: 1rem;
-    margin-top: 1.5rem;
-    margin-bottom: 1.2rem;
-    padding: 1.1rem;
-    border-radius: 12px;
-    background: linear-gradient(135deg, #ddf0f3, #ffb6b9);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    text-align: center;
-    animation: fadeIn 0.3s ease-in-out;
-    transition: transform 0.3s ease;
-  }
-  
-  .highlighted-mood:hover {
-    transform: scale(1.03);
-  }
-  
-  .highlighted-mood h3 {
-    margin: 0;
-    font-size: 1.6rem;
-    color: #2d6a4f;
-    font-weight: 600;
-  }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(8px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
+.journal-entry {
+  width: 100%;
+  max-width: 100%;
+  height: 150px;
+  padding: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-bottom: 1rem;
+  resize: none;
+  font-size: 1rem;
+  text-align: center; /* Center the text within the textarea */
+  margin-left: auto; /* Center the textarea horizontally */
+  margin-right: auto;
+  display: block;
+}
 
-  .ai-response {
-    background-color: #f0f8ff; /* Light background color */
-    border: 1px solid #ddd;
-    padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    margin-top: 1.5rem; /* Space below the buttons */
-    font-family: "Ubuntu", sans-serif;
-    font-size: 2rem;
-    color: #555;
-    overflow-y: auto;
-    max-height: 300px; /* Adjust as needed */
+.journal-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.voice-button, .submit-button {
+  background-color: #ffb6b9;
+  color: white;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.voice-button:hover, .submit-button:hover {
+  background-color: #ff7b89;
+}
+
+.journalhome-button,
+.history-button {
+  background-color: #ffb6b99b;
+  color: white;
+  margin: 0.2rem;
+  border: none;
+  padding: 0.4rem;
+  font-size: 1.7rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.journalhome-button:hover {
+  background-color: #ff7b89;
+}
+.history-button:hover {
+  background-color: #ff7b89;
+}
+
+.mood-button {
+  animation: zoomIn 1.2s ease-out forwards; /* 'forwards' ensures the final state remains */
+  opacity: 0; /* Start as invisible */
+  background-color: #c2fbd7;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease, background-color 0.3s ease, opacity 0.3s ease;
+}
+
+.highlighted-mood {
+  margin-left: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.2rem;
+  padding: 1.1rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #ddf0f3, #ffb6b9);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  animation: fadeIn 0.3s ease-in-out;
+  transition: transform 0.3s ease;
+}
+
+.highlighted-mood:hover {
+  transform: scale(1.03);
+}
+
+.highlighted-mood h3 {
+  margin: 0;
+  font-size: 1.6rem;
+  color: #2d6a4f;
+  font-weight: 600;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ai-response {
+  background-color: #f0f8ff; /* Light background color */
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  margin-top: 1.5rem; /* Space below the buttons */
+  font-family: "Ubuntu", sans-serif;
+  font-size: 2rem;
+  color: #555;
+  overflow-y: auto;
+  max-height: 300px; /* Adjust as needed */
 }
 
 .ai-response h3 {
-    color: #4a90e2;
-    margin-top: 0;
-    margin-bottom: 0.5rem;
-    font-size: 1.6rem;
-    font-weight: bold;
+  color: #4a90e2;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.6rem;
+  font-weight: bold;
 }
 
 .ai-response p {
-    margin: 0;
-    line-height: 1.8;
-    font-size: 1rem;
+  margin: 0;
+  line-height: 1.8;
+  font-size: 1rem;
 }
-  
-  /* Optional fade-in animation */
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  .enter-button {
-    background-color: #ffb6b9;
-    color: white;
-    border: none;
-    padding: 0.7rem 1.5rem;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
 
-  .enter-button:hover {
-    background-color: #ff7b89;
-  }
+.enter-button {
+  background-color: #ffb6b9;
+  color: white;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
 
-  
+.enter-button:hover {
+  background-color: #ff7b89;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes popOutAndBack {
+  0% {
+    transform: scale(1);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.journal-container {
+  animation: fadeIn 1.5s ease-in-out; /* Fade-in effect */
+  animation-delay: 0.3s; /* Optional delay for smoother effect */
+}
+
+h2 {
+  animation: popOutAndBack 1.2s ease-out;
+  animation-delay: 0.5s;
+}
+
+.mood-button {
+  animation: zoomIn 1.2s ease-out forwards;
+  opacity: 0; /* Start as invisible */
+}
+
+/* Staggered animation delays for each button */
+.mood-button:nth-child(1) {
+  animation-delay: 0.5s;
+}
+.mood-button:nth-child(2) {
+  animation-delay: 0.7s;
+}
+.mood-button:nth-child(3) {
+  animation-delay: 0.9s;
+}
+.mood-button:nth-child(4) {
+  animation-delay: 1.1s;
+}
+.mood-button:nth-child(5) {
+  animation-delay: 1.3s;
+}
+.mood-button:nth-child(6) {
+  animation-delay: 1.5s;
+}
+
+.mood-button.selected {
+  background-color: #79e3a5;
+  font-weight: bold;
+  transform: scale(1.1);
+  font-size: 1.4rem;
+  transition: transform 0.3s ease, background-color 0.3s ease, font-size 0.3s ease;
+}
+
+.mood-button.dimmed {
+  background-color: #79e3a556;
+  opacity: 0.2;
+  transform: scale(0.9);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.ai-response {
+  animation: fadeIn 3s ease-in-out;
+
+}

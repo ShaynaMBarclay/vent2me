@@ -164,7 +164,7 @@ function Journal() {
                 {moods.map((mood) => (
                     <button
                         key={mood}
-                        className={`mood-button ${selectedMood && selectedMood !== mood ? 'dimmed' : ''}`}
+                        className={`mood-button ${selectedMood && selectedMood !== mood ? 'dimmed' : ''} ${selectedMood === mood ? 'selected' : ''}`}
                         onClick={() => setSelectedMood(mood)}
                     >
                         {mood}
