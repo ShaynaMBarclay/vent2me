@@ -60,6 +60,14 @@ function History() {
     reader.readAsText(file);
   };
 
+  const handleClearAll = () => {
+    const confirmClear = window.confirm("Are you sure you want to delete all your journal entries?");
+    if (confirmClear) {
+      localStorage.removeItem('journalEntries');
+      setEntries([]);
+    }
+  };
+
   return (
     <div className="history-container">
       <div className="history-header">
@@ -75,9 +83,10 @@ function History() {
           📥 Import Entries
           <input type="file" accept="application/json" onChange={handleImport} className="import-input" />
         </label>
-      </div>
-      
 
+        <button onClick={handleClearAll} className="clear-button">🗑️ Clear All Entries</button>
+        </div>
+      
       {entries.length === 0 ? (
         <p className="no-entries">No entries yet.</p>
       ) : (
