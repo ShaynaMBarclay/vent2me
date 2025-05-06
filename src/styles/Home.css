@@ -14,19 +14,20 @@
   }
   
   .home-title {
-    font-size: 4rem;
+    font-size: 5rem;
     color: #5c5470;
     font-family: "Libre Baskerville", serif;
     font-weight: 700; 
     opacity: 0; /* Initially hidden */
     transform: translateY(-20px); /* Start a little above */
     animation: slideInDown 0.6s ease-out 0.2s forwards;
+    margin-top: 0;
   }
   
   .home-subtitle {
     font-size: 1.6rem;
     color: #6e6a86;
-    margin-bottom: 1.3rem;
+    margin-bottom: 1rem;
     font-family: "Ubuntu", sans-serif;
     font-style: italic;
     opacity: 0; /* Initially hidden */
@@ -47,7 +48,7 @@
     opacity: 0; /* Initially hidden */
     transform: translateY(-10px); /* Start a little above */
     animation: slideInDown 0.6s ease-out 0.6s forwards;
-    margin-bottom: 1rem;
+    margin-top: 1rem;
   }
   
   .home-button:hover {
@@ -117,6 +118,7 @@
   font-size: 2.5rem; 
   cursor: pointer;
   transition: background-color 0.3s ease;
+  margin-top: 1rem;
 }
 
 .settings-link-button:hover {
