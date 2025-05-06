@@ -6,6 +6,13 @@
       padding: 2rem;
       border-radius: 8px;
     }
+
+    .highlighted-mood {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
   
     h2 {
       font-size: 2rem;
