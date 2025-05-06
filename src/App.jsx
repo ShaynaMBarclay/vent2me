@@ -3,7 +3,6 @@ import Home from './pages/Home';
 import History from './pages/History';
 import Journal from './pages/Journal';
 import Response from './pages/Response';
-import Settings from './pages/Settings';
 import "./styles/App.css";
 
 
@@ -15,7 +14,6 @@ const App = () => {
       <Route path="/journal" element={<Journal />} />
       <Route path="/response" element={<Response />} />
       <Route path="/history" element={<History />} />
-      <Route path="/settings" element={<Settings />} />
     </Routes>
   );
 }
