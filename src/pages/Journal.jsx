@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ErrorMessage from '../components/ErrorMessage';
+import LoadingSpinner from '../components/LoadingSpinner';
 import '../styles/Journal.css';
 import axios from 'axios';
 import { v4 as uuidv4 } from 'uuid';
@@ -15,6 +16,7 @@ function Journal() {
     const [entries, setEntries] = useState([]);
     const [isListening, setIsListening] = useState(false);
     const [aiResponse, setAiResponse] = useState('');
+    const [isAiLoading, setIsAiLoading] = useState(false);
     const recognitionRef = useRef(null);
     const isListeningRef = useRef(false);
     const [error, setError] = useState('');
@@ -77,31 +79,40 @@ function Journal() {
         }
     };
 
+    /*GEMINI RESPONSE*/
+
     const handleGeminiResponse = async () => {
         const mood = selectedMood || customMood.trim();
         if (!mood || !entry.trim()) return;
-
+    
+        setIsAiLoading(true); // Set loading to true before the API call
+        setAiResponse(''); // Clear any previous response
+        setError(''); // Clear any previous error messages
+    
         try {
             const response = await axios.post(`https://vent2meserver.onrender.com/gemini`, {
                 journalEntry: entry,
             });
-
+    
             console.log('API Response:', response);
-
+    
             if (response.status === 429) {
                 setError("You've exceeded your advice usage for now, please check back later");
                 return;
             }
-
+    
             setAiResponse(response.data.reply);
-            setError(''); // clear any previous error
+    
         } catch (err) {
+            console.error('Error fetching AI response:', err);
             if (err.response && err.response.status === 429) {
                 setError("You've exceeded your advice usage for now, please check back later");
             } else {
                 setError('Something went wrong. Please try again later.');
                 setAiResponse('');
             }
+        } finally {
+            setIsAiLoading(false); // Set loading to false after the API call completes (success or error)
         }
     };
 
@@ -184,7 +195,7 @@ function Journal() {
 
             <textarea
                 className="journal-entry"
-                placeholder="Write your thoughts here... Or speak them! Hit the 'Get Advice' button for some guidance. Gont need it? Dont worry! Skip it and save your entry!"
+                placeholder="Write your thoughts here... Or speak them! Hit the 'Get Advice' button for some guidance. Dont need it? Dont worry! Skip it and save your entry!"
                 value={entry}
                 onChange={(e) => setEntry(e.target.value)}
             />
@@ -204,6 +215,9 @@ function Journal() {
                     Save Entry
                 </button>
             </div>
+
+            {console.log('Rendering: isAiLoading is', isAiLoading)} {/* console.log AFTER declaration */}
+            {isAiLoading && <LoadingSpinner />} {/* Conditional rendering AFTER declaration */}
 
             <ErrorMessage message={error} />
 

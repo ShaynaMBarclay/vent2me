@@ -11,6 +11,11 @@ function History() {
     setEntries(saved);
   }, []);
 
+  useEffect(() => {
+    entries.forEach(entry => console.log("Entry ID in History:", entry.id));
+  }, [entries]);
+  
+
   const handleExport = () => {
     const data = JSON.stringify(entries, null, 2);
     const blob = new Blob([data], { type: 'application/json' });
