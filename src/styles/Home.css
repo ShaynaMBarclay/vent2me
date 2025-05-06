@@ -48,7 +48,7 @@
     opacity: 0; /* Initially hidden */
     transform: translateY(-10px); /* Start a little above */
     animation: slideInDown 0.6s ease-out 0.6s forwards;
-    margin-bottom: 7rem;
+    margin-bottom: 3rem;
   }
   
   .home-button:hover {
@@ -109,4 +109,17 @@
       font-size: 1.3rem;
       margin-bottom: 1.5rem;
   }
+}
+
+.settings-link-button {
+  padding: 0;
+  background: transparent;
+  border: none;
+  font-size: 2.5rem; 
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.settings-link-button:hover {
+  background-color: transparent; 
 }

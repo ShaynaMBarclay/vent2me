@@ -8,6 +8,10 @@ function Home() {
         navigate('/journal');
     };
 
+    const goToSettings = () => {
+        navigate('/settings');
+    };
+
     return (
         <div className="home-container">
         <h1 className="home-title">Welcome to Your Escape</h1>
@@ -15,6 +19,9 @@ function Home() {
         <button className="home-button" onClick={handleStart}>
         Start Journaling
       </button>
+      <button className="settings-link-button" onClick={goToSettings}>
+                ⚙️ 
+            </button>
       </div>
     );
 }

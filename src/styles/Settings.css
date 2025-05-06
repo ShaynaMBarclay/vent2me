@@ -1,0 +1,217 @@
+/* Container for the whole settings page */
+.settings-page-container {
+    flex: 1 1 400px;
+    max-width: 600px;
+    margin: 6rem 4rem;
+    padding: 3rem;
+    background-color: #fff;
+    border: 3px solid #000000;
+    border-radius: 25px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    background: #fffef9;
+    border: 1px solid #e0d6c6;
+    border-radius: 12px;
+    box-shadow: inset 0 0 0 2px #f3e6dc, 3px 6px 12px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    min-height: 200px;
+    position: relative;
+    transition: transform 0.2s ease;
+    background-image: repeating-linear-gradient(
+      to bottom,
+      #fffaf6 0px,
+      #fffaf6 24px,
+      #f5ede7 25px
+    );
+    background-size: 100% 25px;
+    border-left: 8px solid #d79696;
+    font-family: "Ubuntu", sans-serif;
+
+  }
+  
+  /* Navigation header */
+  .settings-header {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    margin-top: 5rem; /* optional spacing from the very top */
+    font-family: "Ubuntu", sans-serif;
+  }
+  
+  .settings-nav-button {
+    background-color: #be4d91;
+    color: white;
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .settings-nav-button:hover {
+    background-color: #a03c77;
+  }
+  
+  /* Form wrapper */
+  .settings-form-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  /* Title */
+  .settings-title {
+    font-size: 2.4rem;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+  
+  /* Success message */
+  .settings-success-message {
+    color: green;
+    font-weight: bold;
+  }
+  
+  /* Form and its fields */
+  .settings-contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  
+  .settings-label {
+    font-size: 20px;
+    font-weight: bold;
+    color: #444;
+  }
+  
+  .message-label {
+    font-size: 20px;
+    font-weight: bold;
+    color: #444;
+  }
+  
+  .settings-layout-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin: 2rem auto;
+    max-width: 1200px;
+    padding: 0 1rem;
+  }
+  
+  
+  /* Submit button */
+  .message-submit-button {
+    background-color: #d4a5a5;
+    color: white;
+    padding: 0.8rem;
+    font-size: 1.4rem;
+    margin-left: 5rem;
+    margin-right: 5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: "Ubuntu", sans-serif;
+    transition: background-color 0.3s ease;
+  }
+  
+  .message-submit-button:hover {
+    background-color: #bc6c25;
+  }
+
+  .settings-input {
+    padding: 0.7rem;
+  }
+  
+  .message-textarea {
+    padding: 1rem;
+    min-height: 150px;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    resize: vertical;
+    margin-bottom: 1rem;
+  }
+
+  .about-section-container {
+    flex: 1 1 300px;
+    max-width: 500px;
+    background-color: #fffef9;
+    border: 1px solid #e0d6c6;
+    border-left: 8px solid #d79696;
+    border-radius: 12px;
+    padding: 2rem;
+    font-family: "Ubuntu", sans-serif;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.05);
+    margin-bottom: 4rem;
+  }
+  
+  .about-section-container h3 {
+    font-size: 24px;
+    font-family: "Ubuntu", sans-serif;
+    color: #333;
+  }
+  
+  .about-section-container p {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.6rem;
+    color: #555;
+    font-family: "Ubuntu", sans-serif;
+  }
+
+  .tip-box {
+    background-color: #fffaf6;
+    border: 1px solid #e0d6c6;
+    border-left: 8px solid #d79696;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 4px;
+    font-family: "Ubuntu", sans-serif;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 60%;
+    
+    
+  }
+    
+    .tip-box h3 {
+        font-size: 2rem;
+        margin-bottom: 0.3rem;
+        color: #333;
+      }
+    
+    
+  
+  .tip-box p {
+    font-size: 1rem;
+    padding: 1rem;
+    margin: 0.4rem auto;
+    font-style: italic;
+    font-weight: 500;
+    color: #333;
+    line-height: 1.4rem;
+    text-align: center; 
+    max-width: 50%;
+    font-family: "Ubuntu", sans-serif;
+  }
+  
+  .tip-button {
+    background-color: #d4a5a5;
+    color: white;
+    border: none;
+    padding: 0.4rem 0.9rem;
+    font-size: 1.4rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 1rem;
+  }
+  
+  .tip-button:hover {
+    background-color: #bc6c25;
+  }

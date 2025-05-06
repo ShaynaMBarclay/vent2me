@@ -7,6 +7,8 @@
 @import './Error.css';
 @import './LoadingSpinner.css';
 @import './JournalQueries.css';
+@import './Settings.css';
+@import './SettingsQueries.css';
 
 html, body {
     height: 100%;
