@@ -1,0 +1,135 @@
+/* Base phone screens: up to 768px */
+@media (max-width: 768px) {
+    .journal-container {
+      max-width: 100%;
+      margin: 1rem;
+      padding: 2rem;
+      border-radius: 8px;
+    }
+  
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  
+    .mood-buttons {
+      gap: 0.9rem;
+      margin-bottom: 1.6rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    .mood-button {
+      padding: 0.8rem 1rem;
+      font-size: 1rem;
+    }
+  
+    .custom-mood {
+      font-size: 0.95rem;
+      padding: 0.6rem;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 220px;          
+      margin-bottom: 0.7rem; 
+      align-items: center;    
+     box-sizing: border-box;
+    }
+  
+    .journal-entry {
+      font-size: 1rem;
+      height: 350px;
+      width: 90%;
+      margin-bottom: 0.8rem;
+      text-align: center;
+    }
+  
+    .journal-actions {
+      flex-direction: row;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+  
+    .voice-button,
+    .submit-button,
+    .enter-button {
+      font-size: 1rem;
+      padding: 0.7rem 1rem;
+      min-width: 120px;
+      margin: 0.4rem;
+      flex-basis: calc(50% - 1rem);
+      max-width: calc(50% - 1rem);
+    }
+  
+    .journalhome-button,
+    .history-button {
+      font-size: 2rem;
+      padding: 0.3rem;
+      top: 0.5rem;
+      margin: 0.3rem;
+    }
+  
+    .ai-response.below-buttons {
+      font-size: 0.9rem;
+      padding: 0.8rem;
+      margin: 0.8rem 0;
+      border-radius: 8px;
+    }
+  
+    .ai-response.below-buttons h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.3rem;
+    }
+  }
+  
+  /* Very small screens: up to 400px */
+  @media (max-width: 400px) {
+    .voice-button,
+    .submit-button,
+    .enter-button {
+      flex-basis: 100%;
+      max-width: 100%;
+      margin: 0.4rem 0;
+    }
+  }
+  
+  /* Mid-range phones and special cases */
+  @media (min-width: 401px) and (max-width: 600px),
+         (width: 414px) and (height: 896px) {
+    .voice-button,
+    .submit-button,
+    .enter-button {
+      min-width: 80%;
+      max-width: 80%;
+    }
+  }
+  
+  /* Larger screens (fallback if not handled elsewhere) */
+  @media (min-width: 601px) {
+    .journal-actions {
+      flex-direction: row;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  
+    .voice-button,
+    .submit-button,
+    .enter-button {
+      flex-basis: auto;
+      max-width: none;
+      min-width: 120px;
+      margin: 0.6rem;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .home-container {
+      min-height: 100vh;
+    }
+  }
+  

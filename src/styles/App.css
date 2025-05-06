@@ -6,6 +6,7 @@
 @import './History.css';
 @import './Error.css';
 @import './LoadingSpinner.css';
+@import './JournalQueries.css';
 
 html, body {
     height: 100%;
@@ -19,11 +20,4 @@ html, body {
     overflow-x: hidden;
   }
 
-  @media (max-width: 600px) {
-    .home-container {
-      min-height: 100vh; /* Instead of height: 90vh */
-    }
-  }
-  .home-container {
-    background-attachment: fixed;
-  }
+ 

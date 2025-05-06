@@ -6,6 +6,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 1.2rem;
   }
   
   .history-header {
@@ -58,19 +59,19 @@
   
   .entry-mood {
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     color: #bc6c25; /* rich brown */
     margin-bottom: 0.5rem;
   }
   
   .entry-date {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     color: #6a6a6a;
     margin-bottom: 1rem;
   }
   
   .entry-text {
-    font-size: 1rem;
+    font-size: 22px;
     color: #333;
     line-height: 1.6;
     white-space: pre-wrap;
@@ -88,9 +89,9 @@
   }
 
   .history-actions {
-    margin: 1rem 0;
+    margin: 1rem 0 1.5rem 0;
     display: flex;
-    gap: 1rem;
+    gap: 1.3rem;
     flex-wrap: wrap;
     justify-content: center;
   }
@@ -122,6 +123,8 @@
     padding: 0.5rem;
     background-color: #f5f5f5;
     border-left: 4px solid #5c9ead;
+    font-size: 19px;
+    line-height: 2rem;
     font-style: italic;
     color: #333;
   }
