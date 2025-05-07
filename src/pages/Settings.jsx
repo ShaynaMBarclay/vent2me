@@ -117,6 +117,37 @@ function Settings() {
         To help with that, the app lets you export your entries as a backup and import them later if needed. 
         It’s a good habit to export your journal occasionally — just in case your device resets or a glitch sneaks in. That way, your thoughts are safe and easy to restore whenever you need them.</p>
     </div>
+
+     
+     {/* Add to Home Screen Section */}
+<div className="add-homescreen">
+  <h3>📲 Add to Your Home Screen</h3>
+  <p>Want quick access to your Happy Little Journal just like a regular app? You can add it to your phone’s home screen — no download needed!</p>
+
+  <h4>For iPhone (Shortcuts App)</h4>
+  <ul>
+    <li>1. <strong>Open the Shortcuts App</strong> If you don’t have it, download “Shortcuts” from the App Store — it's a free Apple app.</li>
+    <li>2. Tap the + (plus) button in the top right corner to create a new shortcut.</li>
+    <li>3. In the search bar, type and select <strong>“Open URL.”</strong></li>
+    <li>4. <strong>Tap “URL” </strong>and paste this link: <strong>https://myhappylittlejournal.com</strong></li>
+    <li>5. Tap the arrow <strong>Open URLS⬅️</strong> at the top of the screen, and hit <strong>"Add to Home Screen"</strong></li>
+    <li>6. You can customize your Icon name and picture</li>
+    <li>7. Click <strong>"Add"</strong> and now you have an icon on your homescreen!</li>
+  </ul>
+
+  <h4>For Android </h4>
+  <ul>
+    <li>1. Open Chrome (or your preferred browser) on your phone.</li>
+    <li>2. Visit: <strong>https://myhappylittlejournal.com</strong></li>
+    <li>3. Tap the <strong>three dots menu (⋮)</strong> in the top-right corner.</li>
+    <li>4. Select <strong>“Add to Home screen.”</strong></li>
+    <li>5. Choose a name you'd like for your Journal!</li>
+    <li>6. Tap <strong>“Add”</strong> — and confirm by dragging the icon or tapping “Add Automatically.”</li>
+  </ul>
+
+  <p>This way, your journal lives right on your phone’s home screen — just like an app, without taking up any space. 💖</p>
+</div>
+
   </div>
 </>
 

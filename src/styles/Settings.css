@@ -215,3 +215,43 @@
   .tip-button:hover {
     background-color: #bc6c25;
   }
+
+  .add-homescreen {
+    flex: 1 1 300px;
+    max-width: 500px;
+    background-color: #fffef9;
+    border: 1px solid #e0d6c6;
+    border-left: 8px solid #d79696;
+    border-radius: 12px;
+    padding: 2rem;
+    font-family: "Ubuntu", sans-serif;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.05);
+    margin-bottom: 4rem;
+  }
+  .add-homescreen h3 {
+    font-size: 24px;
+    font-family: "Ubuntu", sans-serif;
+    color: #333;
+  }
+
+  .add-homescreen h4 {
+    font-size: 24px;
+    font-family: "Ubuntu", sans-serif;
+    color: #333;
+  }
+    
+  .add-homescreen p {
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.6rem;
+    font-style: italic;
+    color: #555;
+    font-family: "Ubuntu", sans-serif;
+  }
+
+  .add-homescreen li {
+    font-size: 1rem;
+    line-height: 1.7rem;
+    color: #000000;
+    font-family: "Ubuntu", sans-serif;
+  }
