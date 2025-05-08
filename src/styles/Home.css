@@ -29,7 +29,7 @@
   }
 
   body.dark-mode .home-title {
-    color: #573e96;
+    color: #805fd2;
   }
   
   .home-subtitle {
@@ -44,7 +44,7 @@
   }
   
   body.dark-mode .home-subtitle {
-    color: #573e96;
+    color: #805fd2;;
   }
   
   .home-button {
@@ -64,8 +64,8 @@
   }
 
   body.dark-mode .home-button {
-    background-color: #4b3c71;
-    color: #948aaf;
+    background-color: #805fd2;;
+    color: #c2b7e1;
   }
   
   .home-button:hover {

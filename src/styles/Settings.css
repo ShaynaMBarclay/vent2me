@@ -43,7 +43,6 @@
   
   /* Navigation header */
   .settings-header {
-    
     display: flex;
     justify-content: center; /* Center horizontally */
     align-items: center;
@@ -187,8 +186,9 @@
   }
 
   body.dark-mode .about-section-container {
-    background-color: #806b6b;
+    background-color: #5e4a4a;
     border-left: 8px solid #a87575;
+    
     
   }
   
@@ -199,7 +199,8 @@
   }
 
   body.dark-mode .about-section-container h3 {
-    color: #3b3939;
+    color: #ab9b9b;
+    
   }
   
   .about-section-container p {
@@ -211,7 +212,7 @@
   }
 
   body.dark-mode .about-section-container p {
-    color: #222222;
+    color: #b1b0b0;
   }
 
   .tip-box {
@@ -228,7 +229,7 @@
   }
 
   body.dark-mode .tip-box {
-    background-color: #806b6b;
+    background-color: #5e4a4a;
     border-left: 8px solid #a87575;
   }
     
@@ -238,6 +239,9 @@
         color: #1e1c1c;
       }
     
+      body.dark-mode .tip-box h3 {
+         color: #ab9b9b;
+      }
     
   
   .tip-box p {
@@ -252,6 +256,11 @@
     max-width: 50%;
     font-family: "Ubuntu", sans-serif;
   }
+
+  body.dark-mode .tip-box p {
+    color: #f0cccc;
+  }
+
   
   .tip-button {
     background-color: #d4a5a5;
@@ -291,7 +300,7 @@
   }
 
   body.dark-mode .add-homescreen {
-    background-color: #806b6b;
+    background-color: #5e4a4a;
     border-left: 8px solid #a87575;
   }
 
@@ -303,7 +312,7 @@
   }
 
   body.dark-mode .add-homescreen h3 {
-    color: #222222;
+    color: #ab9b9b;
   }
 
   .add-homescreen h4 {
@@ -313,7 +322,7 @@
   }
 
   body.dark-mode .add-homescreen h4 {
-    color: #222222
+    color: #ab9b9b;
   }
     
   .add-homescreen p {
@@ -326,7 +335,7 @@
   }
 
   body.dark-mode .add-homescreen p {
-    color: #2b2a2a;
+    color: #b1b0b0;
   }
 
   .add-homescreen li {
@@ -334,4 +343,8 @@
     line-height: 1.7rem;
     color: #000000;
     font-family: "Ubuntu", sans-serif;
+  }
+
+  body.dark-mode .add-homescreen li {
+    color: #f0cccc;
   }
