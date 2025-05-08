@@ -208,7 +208,7 @@
   }
 
   body.dark-mode .about-section-container p {
-    color: #3b3939;
+    color: #222222;
   }
 
   .tip-box {
@@ -232,7 +232,7 @@
     .tip-box h3 {
         font-size: 2rem;
         margin-bottom: 0.3rem;
-        color: #333;
+        color: #1e1c1c;
       }
     
     
@@ -299,10 +299,18 @@
     color: #333;
   }
 
+  body.dark-mode .add-homescreen h3 {
+    color: #222222;
+  }
+
   .add-homescreen h4 {
     font-size: 24px;
     font-family: "Ubuntu", sans-serif;
     color: #333;
+  }
+
+  body.dark-mode .add-homescreen h4 {
+    color: #222222
   }
     
   .add-homescreen p {
@@ -312,6 +320,10 @@
     font-style: italic;
     color: #555;
     font-family: "Ubuntu", sans-serif;
+  }
+
+  body.dark-mode .add-homescreen p {
+    color: #2b2a2a;
   }
 
   .add-homescreen li {
