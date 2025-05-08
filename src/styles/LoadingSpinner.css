@@ -22,3 +22,7 @@
     color: #888;
     font-style: italic;
 }
+
+body.dark-mode .loading-text {
+    color: #ffffff;
+}

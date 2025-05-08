@@ -11,9 +11,12 @@
     animation: fadeIn 1.5s ease-out forwards;
     overflow-y: auto;
     position: relative;
-  
   }
-  
+
+  body.dark-mode .home-container {
+    background: linear-gradient(to bottom, #3b1250, #0e3a41);
+  }
+
   .home-title {
     font-size: 5rem;
     color: #5c5470;
@@ -23,6 +26,10 @@
     transform: translateY(-20px); /* Start a little above */
     animation: slideInDown 0.6s ease-out 0.2s forwards;
     margin-top: 0;
+  }
+
+  body.dark-mode .home-title {
+    color: #573e96;
   }
   
   .home-subtitle {
@@ -34,6 +41,10 @@
     opacity: 0; /* Initially hidden */
     transform: translateY(-15px); /* Start a little above */
     animation: slideInDown 0.6s ease-out 0.4s forwards;
+  }
+  
+  body.dark-mode .home-subtitle {
+    color: #573e96;
   }
   
   .home-button {
@@ -50,6 +61,11 @@
     transform: translateY(-10px); /* Start a little above */
     animation: slideInDown 0.6s ease-out 0.6s forwards;
     margin-top: 1rem;
+  }
+
+  body.dark-mode .home-button {
+    background-color: #4b3c71;
+    color: #948aaf;
   }
   
   .home-button:hover {
@@ -112,8 +128,6 @@
   }
 }
 
-
-/* You might also consider adjustments for even smaller screens */
 @media (max-width: 400px) {
   .home-title {
       font-size: 4.2rem;

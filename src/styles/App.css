@@ -9,17 +9,38 @@
 @import './JournalQueries.css';
 @import './Settings.css';
 @import './SettingsQueries.css';
+@import './DarkModeToggle.css';
+
+#root {
+  min-height: 100vh;
+}
 
 html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color: #fff0f5
+  
+  }
+
+  body {
+    background-color: #fff0f5;
   }
   
+  /* Dark mode */
+body.dark-mode {
+  background-color: #90878a;
+}
+
+  body.dark-mode,
+  body.dark-mode html {
+    background-color: #90878a;
+  }
+
+
   /* Prevent scroll gaps caused by overflow */
   body {
     overflow-x: hidden;
   }
+
 
  

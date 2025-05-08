@@ -8,6 +8,11 @@
     align-items: center;
     margin: 1.2rem;
   }
+
+  body.dark-mode
+  .history-container {
+    background-color: #968794;
+  }
   
   .history-header {
     font-size: 6rem;
@@ -52,6 +57,19 @@
     background-size: 100% 25px;
     border-left: 8px solid #d4a5a5; /* faux book binding */
   }
+
+  body.dark-mode .journal-entry-card {
+    background: #a6a188;
+    border: 3px solid #dcc399;
+    background-image: repeating-linear-gradient(
+      to bottom,
+      #ac9a90 0px,
+      #b1a79e 24px,
+      #d8c5d8 25px
+    );
+    border-left: 8px solid #5a4621;
+  }
+
   
   .journal-entry-card:hover {
     transform: translateY(-5px);
@@ -60,14 +78,22 @@
   .entry-mood {
     font-weight: bold;
     font-size: 1.5rem;
-    color: #bc6c25; /* rich brown */
+    color: #bc6c25; 
     margin-bottom: 0.5rem;
+  }
+
+  body.dark-mode .entry-mood {
+    color: #7e4c21;
   }
   
   .entry-date {
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: #6a6a6a;
     margin-bottom: 1rem;
+  }
+
+  body.dark-mode .entry-date {
+    color: #000000;
   }
   
   .entry-text {
@@ -75,6 +101,10 @@
     color: #333;
     line-height: 1.6;
     white-space: pre-wrap;
+  }
+
+  body.dark-mode .entry-text {
+    color: #4b4842;
   }
   
   .book-background {
@@ -108,10 +138,27 @@
     font-family: "Libre Baskerville", serif;
     font-size: 0.9rem;
   }
+
+  body.dark-mode .export-button{
+    background-color: #9b8886;
+  }
+
+  body.dark-mode .import-label {
+    background-color: #9b8886;
+  }
+
   
   .export-button:hover,
   .import-label:hover {
-    background-color: #fddddd;
+    background-color: #e7caca;
+  }
+
+  body.dark-mode .export-button:hover {
+    background-color: #675a59;
+  }
+
+  body.dark-mode .import-label:hover {
+    background-color: #675a59;
   }
   
   .import-input {
@@ -127,6 +174,12 @@
     line-height: 2rem;
     font-style: italic;
     color: #333;
+  }
+
+  body.dark-mode .entry-ai-response {
+    background-color: #878686;
+    border-left: 4px solid #385f68;
+    color: #faf5f5;
   }
   
   .clear-button {

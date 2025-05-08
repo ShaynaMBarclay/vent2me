@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import * as emailjs from "emailjs-com";
 import { useNavigate } from 'react-router-dom';
+import DarkModeToggle from "../components/DarkModeToggle";
 
 function Settings() {
   const navigate = useNavigate();
@@ -37,14 +38,17 @@ function Settings() {
 
   return (
     <>
+    
       <div className="settings-header">
         <button onClick={() => navigate('/')} className="journalhome-button">🏠</button>
+        <button onClick={() => navigate('/journal')} className="journalhome-button">📝</button>
         <button onClick={() => navigate('/history')} className="history-button">📖</button>
+        <DarkModeToggle />
       </div>
-
+    
        {/* Flex wrapper for form + about section */}
+       
   <div className="settings-layout-wrapper">
-
   <div className="tip-box">
   <h3>☕ Leave a Tip</h3>
   <p>

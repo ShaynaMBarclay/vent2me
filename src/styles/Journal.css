@@ -5,6 +5,15 @@
   border-radius: 12px;
   background-color: #fffdfc;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 3px solid #ffb6b9;
+  
+}
+
+body.dark-mode .journal-container {
+  background-color: #968794 !important;
+  border: 3px solid #4b3c71 !important;
+
+
 }
 
 h2 {
@@ -13,6 +22,10 @@ h2 {
   margin-bottom: 1.3rem;
   font-family: "Ubuntu", sans-serif;
   font-size: 30px;
+}
+
+body.dark-mode h2 {
+  color: #4b3c71;
 }
 
 .mood-buttons {
@@ -49,13 +62,19 @@ h2 {
   box-sizing: border-box;
 }
 
+body.dark-mode .custom-mood {
+  border: 2.5px solid #6ea79a;
+  background-color: #383838;
+  color: white;
+}
+
 .journal-entry {
   width: 100%;
   max-width: 100%;
   height: 150px;
   padding: 1rem;
   border-radius: 6px;
-  border: 3px solid #ffb6b9;;
+  border: 3px solid #ffb6b9;
   margin-bottom: 1rem;
   resize: none;
   font-size: 1rem;
@@ -63,6 +82,12 @@ h2 {
   margin-left: auto; /* Center the textarea horizontally */
   margin-right: auto;
   display: block;
+}
+
+body.dark-mode .journal-entry {
+  background-color: #383838;
+  color: white;
+  border: 3px solid #4b3c71;
 }
 
 .journal-actions {
@@ -80,8 +105,25 @@ h2 {
   transition: background-color 0.3s;
 }
 
+body.dark-mode .voice-button {
+  background-color: #4b3c71;
+}
+
+body.dark-mode .submit-button {
+  background-color: #4b3c71;
+}
+
+
 .voice-button:hover, .submit-button:hover {
   background-color: #ff7b89;
+}
+
+body.dark-mode .voice-button:hover {
+  background-color: #2e2545;
+}
+
+body.dark-mode .submit-button:hover {
+  background-color: #2e2545;
 }
 
 .journalhome-button,
@@ -97,11 +139,27 @@ h2 {
   transition: background-color 0.3s;
 }
 
+body.dark-mode .journalhome-button {
+  background-color: #4b3c71;
+}
+
+body.dark-mode .journalhome-button:hover {
+  background-color: #2e2545;
+}
+
+body.dark-mode .history-button {
+  background-color: #4b3c71;
+}
+
 .journalhome-button:hover {
   background-color: #ff7b89;
 }
 .history-button:hover {
   background-color: #ff7b89;
+}
+
+body.dark-mode .history-button:hover {
+  background-color: #2e2545;
 }
 
 .mood-button {
@@ -114,6 +172,10 @@ h2 {
   cursor: pointer;
   font-size: 1.2rem;
   transition: transform 0.3s ease, background-color 0.3s ease, opacity 0.3s ease;
+}
+
+body.dark-mode .mood-button {
+  background-color: #6ea79a;
 }
 
 .highlighted-mood {
@@ -129,6 +191,10 @@ h2 {
   transition: transform 0.3s ease;
 }
 
+body.dark-mode .highlighted-mood {
+  background: linear-gradient(to bottom, #3b1250b6, #0e3a41b6);
+}
+
 .highlighted-mood:hover {
   transform: scale(1.03);
 }
@@ -138,6 +204,11 @@ h2 {
   font-size: 1.6rem;
   color: #2d6a4f;
   font-weight: 600;
+}
+
+body.dark-mode .highlighted-mood h3 {
+  color: #6ea79a;
+  
 }
 
 @keyframes fadeIn {
@@ -152,8 +223,8 @@ h2 {
 }
 
 .ai-response {
-  background-color: #f0f8ff; /* Light background color */
-  border: 1px solid #ddd;
+  background-color: #f0f8ff; 
+  border: 3px solid #ddd;
   padding: 1rem;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
@@ -165,12 +236,22 @@ h2 {
   max-height: 300px; /* Adjust as needed */
 }
 
+body.dark-mode .ai-response {
+  background-color: #4a5c6e; 
+  border: 3px solid #443d58;
+  color: #c5c3c3;
+}
+
 .ai-response h3 {
   color: #4a90e2;
   margin-top: 0;
   margin-bottom: 0.5rem;
   font-size: 1.6rem;
   font-weight: bold;
+}
+
+body.dark-mode .ai-response h3 {
+  color: #74b3fc;
 }
 
 .ai-response p {
@@ -189,8 +270,16 @@ h2 {
   transition: background-color 0.3s;
 }
 
+body.dark-mode .enter-button {
+  background-color: #4b3c71;
+}
+
 .enter-button:hover {
   background-color: #ff7b89;
+}
+
+body.dark-mode .enter-button:hover {
+  background-color: #2e2545;
 }
 
 @keyframes fadeIn {
@@ -228,10 +317,6 @@ h2 {
   }
 }
 
-.journal-container {
-  animation: fadeIn 1.5s ease-in-out; /* Fade-in effect */
-  animation-delay: 0.3s; /* Optional delay for smoother effect */
-}
 
 h2 {
   animation: popOutAndBack 1.2s ease-out;
