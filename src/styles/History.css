@@ -227,3 +227,36 @@
     border: 2px solid #694c4c;
     color: #f8d9d9;
   }
+
+  .info-box {
+ background-color: #ffe4e1;
+    color: #333;
+    border: 3px solid #d8a4a4;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    font-size: 0.9rem;
+    margin: 2rem;
+     width: 80%;
+     max-width: 600px;
+     text-align: center;
+}
+
+.info-box p {
+  margin: 5px 0;
+  line-height: 1.7;
+  font-weight: 600;
+  font-family: "Libre Baskerville", serif;
+}
+
+.info-box strong {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+body.dark-mode .info-box {
+    background-color: #9b8886;
+    border: 2px solid #694c4c;
+    color: #f8d9d9;
+}

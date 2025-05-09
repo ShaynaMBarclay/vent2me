@@ -77,10 +77,18 @@ function History() {
 
   return (
     <div className="history-container">
+       
       <div className="history-header">
+        
         <button onClick={() => navigate('/')} className="journalhome-button">🏠</button>
         <button onClick={() => navigate('/journal')} className="journalhome-button">📝</button>
         <h2>Your Past Entries</h2>
+      </div>
+
+        {/* Explanation Box */}
+      <div className="info-box">
+        <p><strong>FYI:</strong></p>
+        <p>Your journal entries are safely stored only on this device. This means that if you switch to a different device, clear your browser’s cache, or possibly switch browsers, your entries will no longer be available. To keep them safe and transfer them to another device, you can export your entries and import them wherever you need them. If you ever need to, you can also delete any duplicate entries. Just remember to export your entries before clearing your cache or switching browsers, as doing so may erase your entries permanently.</p>
       </div>
 
       
