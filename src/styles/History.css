@@ -284,7 +284,8 @@ body.dark-mode .info-box {
   font-family: "Libre Baskerville", serif;
   text-align: center;
   box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-  color: rgb(58, 58, 58)
+  font-weight: bold;
+  
 }
 
 .reminder-buttons {
@@ -305,6 +306,7 @@ body.dark-mode .info-box {
   background-color: #ffd966;
   font-weight: bold;
   transition: background-color 0.2s ease;
+  color: rgb(58, 58, 58)
 }
 
 
