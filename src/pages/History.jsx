@@ -16,8 +16,8 @@ function History() {
     const now = new Date().getTime();
     const lastShownTime = lastShown ? parseInt(lastShown, 10) : 0;
 
-    // Show again if it's been more than 7 days or never shown
-    if (now - lastShownTime > 7 * 24 * 60 * 60 * 1000) {
+    // Show again if it's been more than 3 days or never shown
+    if (now - lastShownTime > 3 * 24 * 60 * 60 * 1000)  {
       setShowReminder(true);
     }
   }
@@ -163,7 +163,7 @@ function History() {
             setShowReminder(false);
           }}
         >
-          Remind Me in a Week
+          Remind Me in 3 Days
         </button>
       </div>
     </div>
