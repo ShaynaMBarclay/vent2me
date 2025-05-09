@@ -68,6 +68,13 @@ function History() {
     }
   };
 
+   // Handle deleting a specific entry
+  const handleDelete = (id) => {
+    const updatedEntries = entries.filter(entry => entry.id !== id);
+    setEntries(updatedEntries);
+    localStorage.setItem('journalEntries', JSON.stringify(updatedEntries)); // Update localStorage
+  };
+
   return (
     <div className="history-container">
       <div className="history-header">
@@ -94,6 +101,8 @@ function History() {
        
        {entries.map((entry) => (
   <div key={entry.id} className="journal-entry-card">
+     {/* delete button */}
+   <button onClick={() => handleDelete(entry.id)} className="delete-entry-button">Delete</button>
     <div className="entry-mood">Mood: <strong>{entry.mood}</strong></div>
     <div className="entry-date">{new Date(entry.date).toLocaleString()}</div>
     <p className="entry-text">{entry.text}</p>

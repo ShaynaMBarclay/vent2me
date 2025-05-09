@@ -50,9 +50,9 @@
     transition: transform 0.2s ease;
     background-image: repeating-linear-gradient(
       to bottom,
-      #fffaf6 0px,
-      #fffaf6 24px,
-      #f5ede7 25px
+      #f6e1cf 0px,
+      #fef0fb 24px,
+      #f3c9dd 25px
     );
     background-size: 100% 25px;
     border-left: 8px solid #d4a5a5; /* faux book binding */
@@ -63,9 +63,9 @@
     border: 3px solid #dcc399;
     background-image: repeating-linear-gradient(
       to bottom,
-      #ac9a90 0px,
-      #b1a79e 24px,
-      #d8c5d8 25px
+      #a88b7b 0px,
+      #ad9b8b 24px,
+      #dba6db 25px
     );
     border-left: 8px solid #5a4621;
   }
@@ -104,7 +104,7 @@
   }
 
   body.dark-mode .entry-text {
-    color: #4b4842;
+    color: #f7d3d3;
   }
   
   .book-background {
@@ -116,6 +116,10 @@
     font-style: italic;
     color: #888;
     margin-top: 2rem;
+  }
+
+  body.dark-mode .no-entries {
+    color: #ffffff;
   }
 
   .history-actions {
@@ -142,11 +146,13 @@
   body.dark-mode .export-button{
     background-color: #9b8886;
     border: 2px solid #694c4c;
+    color: #f8d9d9;
   }
 
   body.dark-mode .import-label {
     background-color: #9b8886;
     border: 2px solid #694c4c;
+    color: #f8d9d9;
   }
 
   
@@ -199,3 +205,25 @@
     background-color: #d32f2f;
   }
   
+  .delete-entry-button {
+    background-color: #ffe4e1;
+    color: #333;
+    border: 2px solid #d8a4a4;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    font-family: "Libre Baskerville", serif;
+    font-size: 0.8rem;
+    margin: 0.5rem;
+  }
+
+  .delete-entry-button:hover {
+    background-color: #e7caca;
+  }
+
+  body.dark-mode .delete-entry-button {
+    background-color: #9b8886;
+    border: 2px solid #694c4c;
+    color: #f8d9d9;
+  }
