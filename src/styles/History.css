@@ -260,3 +260,74 @@ body.dark-mode .info-box {
     border: 2px solid #694c4c;
     color: #f8d9d9;
 }
+
+.reminder-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* darkened background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+   box-sizing: border-box;
+}
+
+.reminder-popup {
+  background-color: #fff3cd;
+  border: 3px solid #d6b34b;
+  padding: 0.8rem;
+  max-width: 400px;
+  border-radius: 10px;
+  font-family: "Libre Baskerville", serif;
+  text-align: center;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  
+}
+
+.reminder-buttons {
+  margin-top: 15px;
+  gap: 0.5rem;
+}
+
+.reminder-buttons button:hover {
+  background-color: #d6b34b;
+}
+
+.reminder-buttons button {
+  margin: 0 8px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: #ffd966;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+
+@media (max-width: 768px){
+  .reminder-popup {
+    max-width: 80%;
+    font-size: 0.82rem;
+    padding: 0.9rem;
+  }
+
+  .reminder-buttons button {
+    font-size: 0.8rem;
+    padding: 0.5rem;
+  }
+}
+
+body.dark-mode .reminder-popup {
+  background-color: #6b5e34;
+  border: 3px solid #836305;
+  color: rgb(215, 214, 214);
+}
+
+body.dark-mode .reminder-buttons button {
+  background-color: #785b02;
+  color: rgb(215, 214, 214);
+}

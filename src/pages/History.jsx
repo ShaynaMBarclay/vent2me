@@ -6,6 +6,23 @@ import '../styles/History.css';
 function History() {
   const [entries, setEntries] = useState([]);
   const navigate = useNavigate();
+  const [showReminder, setShowReminder] = useState(false);
+
+  useEffect(() => {
+  const dismissedPermanently = localStorage.getItem('dismissExportReminder');
+  const lastShown = localStorage.getItem('lastExportReminderDate');
+
+  if (!dismissedPermanently) {
+    const now = new Date().getTime();
+    const lastShownTime = lastShown ? parseInt(lastShown, 10) : 0;
+
+    // Show again if it's been more than 7 days or never shown
+    if (now - lastShownTime > 7 * 24 * 60 * 60 * 1000) {
+      setShowReminder(true);
+    }
+  }
+}, []);
+
 
   useEffect(() => {
     const saved = JSON.parse(localStorage.getItem('journalEntries')) || [];
@@ -125,6 +142,34 @@ function History() {
 ))}
         </div>
       )}
+      {showReminder && (
+  <div className="reminder-overlay">
+    <div className="reminder-popup">
+      <p>
+        💡 Have you exported your previous entries recently? You dont want to lose them!
+      </p>
+      <div className="reminder-buttons">
+        <button
+          onClick={() => {
+            localStorage.setItem('dismissExportReminder', 'true');
+            setShowReminder(false);
+          }}
+        >
+          Close Forever
+        </button>
+        <button
+          onClick={() => {
+            localStorage.setItem('lastExportReminderDate', new Date().getTime().toString());
+            setShowReminder(false);
+          }}
+        >
+          Remind Me in a Week
+        </button>
+      </div>
+    </div>
+  </div>
+)}
+
     </div>
   );
 }
