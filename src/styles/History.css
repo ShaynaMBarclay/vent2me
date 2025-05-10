@@ -346,3 +346,51 @@ body.dark-mode .reminder-buttons button {
 body.dark-mode .toggle-advice {
   color: #385f68; 
 }
+
+.tip-container {
+  position: relative;
+  margin-top: 10px;
+}
+
+.tip-bubble {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  background-color: #fed1f9;
+  padding: 11px;
+  border-radius: 4rem;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  font-family: "Libre Baskerville", serif;
+  
+}
+
+.tip-bubble:hover .tip-info {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.3s;
+  
+}
+
+.tip-info {
+  position: absolute;
+  bottom: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fce9f9;
+  color: rgb(73, 73, 73);
+  padding: 20px;
+  border-radius: 7rem;
+  visibility: hidden;
+  opacity: 0;
+  width: 200px;
+  text-align: center;
+  font-family: "Libre Baskerville", serif;
+  font-size: 13px;
+ 
+}
+
+.tip-text {
+  font-weight: bold;
+  color: #333;
+  font-family: "Libre Baskerville", serif;
+}
