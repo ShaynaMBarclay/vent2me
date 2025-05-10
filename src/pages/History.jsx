@@ -5,6 +5,7 @@ import '../styles/History.css';
 
 function History() {
   const [entries, setEntries] = useState([]);
+  const [isInfoOpen, setIsInfoOpen] = useState(true);
   const navigate = useNavigate();
   const [showReminder, setShowReminder] = useState(false);
   const [expandedAdviceId, setExpandedAdviceId] = useState(null);
@@ -105,11 +106,22 @@ function History() {
       </div>
 
       
-        {/* Explanation Box */}
-      <div className="info-box">
-        <p><strong>FYI:</strong></p>
-        <p>Your journal entries are safely stored only on this device. This means that if you switch to a different device, clear your browser’s cache, or possibly switch browsers, your entries will no longer be available. To keep them safe and transfer them to another device, you can export your entries and import them wherever you need them. If you ever need to, you can also delete any duplicate entries. Just remember to export your entries before clearing your cache or switching browsers, or switching devices, as doing so may erase your entries permanently.</p>
-      </div>
+         {/* Toggleable Info Box */}
+  <div className="info-toggle-section">
+  {isInfoOpen ? (
+    <div className="info-box">
+      <button onClick={() => setIsInfoOpen(false)} className="toggle-info-button inside">
+        Hide Info
+      </button>
+      <p><strong>FYI:</strong></p>
+      <p>Your journal entries are safely stored only on this device. This means that if you switch to a different device, clear your browser’s cache, or possibly switch browsers, your entries will no longer be available. To keep them safe and transfer them to another device, you can export your entries and import them wherever you need them. If you ever need to, you can also delete any duplicate entries. Just remember to export your entries before clearing your cache or switching browsers, or switching devices, as doing so may erase your entries permanently.</p>
+    </div>
+  ) : (
+    <button onClick={() => setIsInfoOpen(true)} className="toggle-info-button">
+      Show Info
+    </button>
+  )}
+</div>
 
         {/* Tip Bubble */}
       <div className="tip-container">
