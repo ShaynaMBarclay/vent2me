@@ -393,12 +393,13 @@ body.dark-mode .toggle-advice {
 
 .tip-text {
   font-weight: bold;
-  color: #333;
+  color: #4c354a;
   font-family: "Libre Baskerville", serif;
 }
 
 body.dark-mode .tip-text {
   color: #f8d9d9;
+  font-family: "Libre Baskerville", serif;
 }
 
 body.dark-mode .tip-bubble {
@@ -422,6 +423,8 @@ color:  #f8d9d9;
   border-radius: 0.5rem;
   cursor: pointer;
   font-family: "Libre Baskerville", serif;
+  font-weight: bold;
+  color: #4c354a;
 }
 
 .info-toggle-section {
