@@ -361,6 +361,7 @@ body.dark-mode .toggle-advice {
   border-radius: 4rem;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
   font-family: "Libre Baskerville", serif;
+  border: 2px solid #f7a2f7;
   
 }
 
@@ -378,14 +379,15 @@ body.dark-mode .toggle-advice {
   transform: translateX(-50%);
   background-color: #fce9f9;
   color: rgb(73, 73, 73);
-  padding: 20px;
+  padding: 2rem;
   border-radius: 7rem;
   visibility: hidden;
   opacity: 0;
   width: 200px;
   text-align: center;
   font-family: "Libre Baskerville", serif;
-  font-size: 13px;
+  font-size: 14px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.347);
  
 }
 
@@ -393,4 +395,15 @@ body.dark-mode .toggle-advice {
   font-weight: bold;
   color: #333;
   font-family: "Libre Baskerville", serif;
+}
+
+body.dark-mode .tip-bubble {
+  background-color: #a98ba6;
+  border: 2px solid #e19ce1;
+  color:  #f8d9d9;
+}
+
+body.dark-mode .tip-info {
+background-color: #6f656d;
+color:  #f8d9d9;
 }
