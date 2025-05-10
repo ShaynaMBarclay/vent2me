@@ -7,6 +7,8 @@ function History() {
   const [entries, setEntries] = useState([]);
   const navigate = useNavigate();
   const [showReminder, setShowReminder] = useState(false);
+  const [expandedAdviceId, setExpandedAdviceId] = useState(null);
+
 
   useEffect(() => {
   const dismissedPermanently = localStorage.getItem('dismissExportReminder');
@@ -133,11 +135,21 @@ function History() {
     <p className="entry-text">{entry.text}</p>
 
     {entry.aiResponse && (
-      <div className="entry-ai-response">
-        <strong>Your Advice:</strong>
-        <p>{entry.aiResponse}</p>
-      </div>
+  <div className="entry-ai-response">
+    <strong
+      className="toggle-advice"
+      onClick={() =>
+        setExpandedAdviceId(expandedAdviceId === entry.id ? null : entry.id)
+      }
+    >
+      {expandedAdviceId === entry.id ? 'Hide Advice' : 'Show Advice'}
+    </strong>
+    {expandedAdviceId === entry.id && (
+      <p>{entry.aiResponse}</p>
     )}
+  </div>
+)}
+
   </div>
 ))}
         </div>

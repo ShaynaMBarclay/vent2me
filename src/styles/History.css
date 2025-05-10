@@ -333,3 +333,16 @@ body.dark-mode .reminder-buttons button {
   background-color: #785b02;
   color: rgb(215, 214, 214);
 }
+
+.toggle-advice:hover {
+  text-decoration: underline;
+}
+
+.toggle-advice {
+  cursor: pointer;
+  color: #5c9ead;
+}
+
+body.dark-mode .toggle-advice {
+  color: #385f68; 
+}
