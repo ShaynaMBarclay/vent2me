@@ -478,16 +478,16 @@ body.dark-mode .toggle-info-button {
   max-width: 600px;
   transform-style: preserve-3d;
   backface-visibility: hidden;
-  transition: transform 0.6s ease-in-out;
+  transition: transform 1.7s ease-in-out;
 }
 
 /* Flip Animations */
 .flip-next {
-  animation: flipNext 0.3s ease-out;
+  animation: flipNext 1.7s ease-out;
 }
 
 .flip-prev {
-  animation: flipPrev 0.3s ease-out;
+  animation: flipPrev 1.7s ease-out;
 }
 
 @keyframes flipNext {
