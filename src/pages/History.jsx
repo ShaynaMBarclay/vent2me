@@ -97,8 +97,9 @@ function History() {
 
   return (
     <div className="history-container">
-       
+      
       <div className="history-header">
+        
         
         <button onClick={() => navigate('/')} className="journalhome-button">🏠</button>
         <button onClick={() => navigate('/journal')} className="journalhome-button">📝</button>
@@ -123,16 +124,7 @@ function History() {
   )}
 </div>
 
-        {/* Tip Bubble */}
-      <div className="tip-container">
-        <div className="tip-bubble">
-          <span className="tip-text">Tip❤️</span>
-          <div className="tip-info">
-            <p>To sync across devices or browsers, export your entries after each new one, email them to yourself, then go to your other device, click 'Clear All Entries,' and re-import the updated entries. Or keep seperate entries on seperate devices. I dont judge😈</p>
-          </div>
-        </div>
-      </div>
-
+      
       
       <div className="history-actions">
         <button onClick={handleExport} className="export-button">📤 Export Entries</button>
@@ -143,6 +135,16 @@ function History() {
 
         <button onClick={handleClearAll} className="clear-button">🗑️ Clear All Entries</button>
         </div>
+          {/* Tip Bubble */}
+      <div className="tip-container">
+        <div className="tip-bubble">
+          <span className="tip-text">A <br />Tip❤️</span>
+          <div className="tip-info">
+            <p>To sync across devices or browsers, export your entries after each new one, email them to yourself, then go to your other device, click 'Clear All Entries,' and re-import the updated entries. Or keep seperate entries on seperate devices. I dont judge😈</p>
+          </div>
+        </div>
+      </div>
+
       
       {entries.length === 0 ? (
         <p className="no-entries">No entries yet.</p>
