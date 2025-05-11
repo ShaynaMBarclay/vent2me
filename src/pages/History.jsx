@@ -172,8 +172,8 @@ function History() {
   </div>
 
   <div className="page-controls">
-    <button onClick={prevPage} disabled={currentPage === 0} className="arrow-button left-arrow">🡄</button>
-    <button onClick={nextPage} disabled={currentPage === entries.length - 1} className="arrow-button right-arrow">🡆</button>
+    <button onClick={prevPage} disabled={currentPage === 0} className="arrow-button left-arrow">←</button>
+    <button onClick={nextPage} disabled={currentPage === entries.length - 1} className="arrow-button right-arrow">→</button>
   </div>
 </div>
 
