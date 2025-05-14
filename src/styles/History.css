@@ -55,7 +55,7 @@
     min-height: 200px;
     position: relative;
     transition: transform 0.2s ease;
-    
+    font-family: "Ubuntu", sans-serif;
     border-left: 8px solid #d4a5a5; /* faux book binding */
   }
 
