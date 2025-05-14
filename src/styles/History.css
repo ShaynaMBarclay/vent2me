@@ -511,7 +511,7 @@ body.dark-mode .toggle-info-button {
 .page-controls {
   position: absolute;
   top: 50%;
-  width: 100%;
+  width: 120%;
   display: flex;
   justify-content: space-between;
   transform: translateY(-50%);
@@ -629,6 +629,6 @@ body.dark-mode .arrow-button {
   }
 
   .page-controls {
-    width: 120%;
+    width: 135%;
   }
 }
