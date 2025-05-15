@@ -4,6 +4,7 @@ import History from './pages/History';
 import Journal from './pages/Journal';
 import Settings from './pages/Settings';
 import ScrollToTop from './components/ScrollToTop';
+import Cursor from './components/Cursor';
 import "./styles/App.css";
 
 
@@ -12,6 +13,7 @@ const App = () => {
   return (
 
   <div> 
+    <Cursor />
     <ScrollToTop />
     <Routes>
     <Route path="/" element={<Home />} />

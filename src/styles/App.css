@@ -10,6 +10,7 @@
 @import './Settings.css';
 @import './SettingsQueries.css';
 @import './DarkModeToggle.css';
+@import './Cursor.css';
 
 #root {
   min-height: 100vh;
