@@ -111,20 +111,6 @@ function History() {
         <h2>Your Past Entries</h2>
       </div>
 
-      <div className="info-toggle-section">
-        {isInfoOpen ? (
-          <div className="info-box">
-            <button onClick={() => setIsInfoOpen(false)} className="toggle-info-button inside">
-              Hide Info
-            </button>
-            <p><strong>FYI:</strong></p>
-            <p>Your journal entries are safely stored only on this device. This means that if you switch to a different device, clear your browser’s cache, or possibly switch browsers, your entries will no longer be available. To keep them safe and transfer them to another device, you can export your entries and import them wherever you need them. If you ever need to, you can also delete any duplicate entries. Just remember to export your entries before clearing your cache or switching browsers, or switching devices, as doing so may erase your entries permanently.</p>
-          </div>
-        ) : (
-          <button onClick={() => setIsInfoOpen(true)} className="toggle-info-button">Show Info</button>
-        )}
-      </div>
-
       <div className="history-actions">
         <button onClick={handleExport} className="export-button">📤 Export Entries</button>
         <label className="import-label">
@@ -134,15 +120,7 @@ function History() {
         <button onClick={handleClearAll} className="clear-button">🗑️ Clear All Entries</button>
       </div>
 
-      <div className="tip-container">
-        <div className="tip-bubble">
-          <span className="tip-text">A <br />Tip❤️</span>
-          <div className="tip-info">
-            <p>To sync across devices or browsers, export your entries after each new one, email them to yourself, then go to your other device, click 'Clear All Entries,' and re-import the updated entries. Or keep seperate entries on seperate devices. I dont judge😈</p>
-          </div>
-        </div>
-      </div>
-
+     
       {entries.length === 0 ? (
   <p className="no-entries">No entries yet.</p>
 ) : (
@@ -178,9 +156,7 @@ function History() {
 </div>
 
 
-
 )}
-
 
       {showReminder && (
         <div className="reminder-overlay">
@@ -199,6 +175,29 @@ function History() {
           </div>
         </div>
       )}
+
+       <div className="info-toggle-section">
+        {isInfoOpen ? (
+          <div className="info-box">
+            <button onClick={() => setIsInfoOpen(false)} className="toggle-info-button inside">
+              Hide Info
+            </button>
+            <p><strong>FYI:</strong></p>
+            <p>Your journal entries are safely stored only on this device. This means that if you switch to a different device, clear your browser’s cache, or possibly switch browsers, your entries will no longer be available. To keep them safe and transfer them to another device, you can export your entries and import them wherever you need them. If you ever need to, you can also delete any duplicate entries. Just remember to export your entries before clearing your cache or switching browsers, or switching devices, as doing so may erase your entries permanently.</p>
+          </div>
+        ) : (
+          <button onClick={() => setIsInfoOpen(true)} className="toggle-info-button">Show Info</button>
+        )}
+      </div>
+ <div className="tip-container">
+        <div className="tip-bubble">
+          <span className="tip-text">A <br />Tip❤️</span>
+          <div className="tip-info">
+            <p>To sync across devices or browsers, export your entries after each new one, email them to yourself, then go to your other device, click 'Clear All Entries,' and re-import the updated entries. Or keep seperate entries on seperate devices. I dont judge😈</p>
+          </div>
+        </div>
+      </div>
+
     </div>
   );
 }
