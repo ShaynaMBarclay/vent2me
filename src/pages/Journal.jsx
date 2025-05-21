@@ -216,7 +216,7 @@ function Journal() {
                 </button>
             </div>
 
-            {console.log('Rendering: isAiLoading is', isAiLoading)} {/* console.log AFTER declaration */}
+            {console.log('Rendering: isAiLoading is', isAiLoading)} 
             {isAiLoading && <LoadingSpinner />} {/* Conditional rendering AFTER declaration */}
 
             <ErrorMessage message={error} />
