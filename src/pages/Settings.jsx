@@ -147,7 +147,7 @@ function Settings() {
     <li>3. Tap the <strong>three dots menu (⋮)</strong> in the top-right corner.</li>
     <li>4. Select <strong>“Add to Home screen.”</strong></li>
     <li>5. Choose a name you'd like for your Journal!</li>
-    <li>6. Tap <strong>“Add”</strong> — and confirm by dragging the icon or tapping “Add Automatically.”</li>
+    <li>6. Tap <strong>“Add”</strong>  and confirm by dragging the icon or tapping “Add Automatically.”</li>
   </ul>
 
   <p>This way, your journal lives right on your phone’s home screen, just like an app, without taking up any space. 💖</p>
