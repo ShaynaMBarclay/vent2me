@@ -29,7 +29,8 @@ function History() {
     setEntries(saved);
   }, []);
 
-  const handleExport = () => {
+ const handleExport = () => {
+  setTimeout(() => {
     const data = JSON.stringify(entries, null, 2);
     const blob = new Blob([data], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
@@ -38,8 +39,8 @@ function History() {
     a.download = 'my-journal-entries.json';
     a.click();
     URL.revokeObjectURL(url);
-  };
-
+  }, 0);
+};
   const handleImport = (event) => {
     const file = event.target.files[0];
     if (!file) return;
@@ -49,7 +50,7 @@ function History() {
         let importedEntries = JSON.parse(e.target.result);
         if (Array.isArray(importedEntries)) {
           importedEntries = importedEntries.map(entry => ({ ...entry, id: uuidv4() }));
-          const combined = [...entries, ...importedEntries];
+          const combined = [...importedEntries, ...entries].sort((a, b) => new Date(b.date) - new Date(a.date));
           localStorage.setItem('journalEntries', JSON.stringify(combined));
           setEntries(combined);
           alert('Entries imported successfully!');
