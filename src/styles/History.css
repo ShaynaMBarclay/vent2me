@@ -1,6 +1,6 @@
 .history-container {
     padding: 2rem;
-    background-color: #fff0f5; /* soft pink background */
+    background-color: #fff0f5; 
     min-height: 100vh;
     font-family: 'Georgia', serif;
     display: flex;
@@ -17,7 +17,7 @@
   .history-header {
     font-size: 6rem;
     margin-bottom: 1rem;
-    color: #355e3b; /* deep green text */
+    color: #355e3b; 
     display: flex;
     align-items: center;
     gap: 0.2rem;
@@ -268,7 +268,7 @@ body.dark-mode .info-box {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* darkened background */
+  background-color: rgba(0, 0, 0, 0.5); 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -383,7 +383,7 @@ body.dark-mode .toggle-advice {
   background-color: #fce9f9;
   color: rgb(73, 73, 73);
   padding: 2rem;
-  border-radius: 2rem;
+  border-radius: 20rem;
   visibility: hidden;
   opacity: 0;
   width: 200px;
