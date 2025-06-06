@@ -372,6 +372,7 @@ body.dark-mode .toggle-advice {
   visibility: visible;
   opacity: 1;
   transition: opacity 0.3s;
+  border: 3px solid #f7a2f7;
   
 }
 
@@ -406,6 +407,10 @@ body.dark-mode .tip-text {
   font-family: "Libre Baskerville", serif;
 }
 
+body.dark-mode .tip-bubble:hover .tip-info {
+  border: 3px solid #664466;
+}
+
 body.dark-mode .tip-bubble {
   background-color: #a98ba6;
   border: 2px solid #664466;
@@ -416,6 +421,7 @@ body.dark-mode .tip-bubble {
 body.dark-mode .tip-info {
 background-color: #6f656d;
 color:  #f8d9d9;
+
 }
 
 .toggle-info-button {
