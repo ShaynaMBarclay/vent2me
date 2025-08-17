@@ -17,11 +17,34 @@ body.dark-mode .journal-container {
 }
 
 h2 {
+  opacity: 0; /* start hidden */
   text-align: center;
   color: #5c5470;
   margin-bottom: 1.3rem;
   font-family: "Ubuntu", sans-serif;
   font-size: 30px;
+  
+  animation-name: popOutAndBack;
+  animation-duration: 1.2s;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards; /* <-- keeps the final state */
+  animation-timing-function: ease-out;
+}
+
+@keyframes popOutAndBack {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
 body.dark-mode h2 {
@@ -37,17 +60,6 @@ body.dark-mode h2 {
   
 }
 
-/* Animation for zoom-in effect */
-@keyframes zoomIn {
-  from {
-    transform: scale(0);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
 
 .custom-mood {
   display: flex;
@@ -79,8 +91,8 @@ body.dark-mode .custom-mood {
   margin-bottom: 1rem;
   resize: none;
   font-size: 1rem;
-  text-align: center; /* Center the text within the textarea */
-  margin-left: auto; /* Center the textarea horizontally */
+  text-align: center; 
+  margin-left: auto; 
   margin-right: auto;
   display: block;
 }
@@ -164,8 +176,8 @@ body.dark-mode .history-button:hover {
 }
 
 .mood-button {
-  animation: zoomIn 1.2s ease-out forwards; /* 'forwards' ensures the final state remains */
-  opacity: 0; /* Start as invisible */
+  animation: zoomIn 1.2s ease-out forwards; 
+  opacity: 0; 
   background-color: #c2fbd7;
   border: none;
   padding: 0.5rem 1rem;
@@ -230,12 +242,12 @@ body.dark-mode .highlighted-mood h3 {
   padding: 1rem;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  margin-top: 2rem; /* Space below the buttons */
+  margin-top: 2rem; 
   font-family: "Ubuntu", sans-serif;
   font-size: 2rem;
   color: #555;
   overflow-y: auto;
-  max-height: 300px; /* Adjust as needed */
+  max-height: 300px; 
 }
 
 body.dark-mode .ai-response {
@@ -320,17 +332,11 @@ body.dark-mode .enter-button:hover {
 }
 
 
-h2 {
-  animation: popOutAndBack 1.2s ease-out;
-  animation-delay: 0.5s;
-}
-
 .mood-button {
   animation: zoomIn 1.2s ease-out forwards;
-  opacity: 0; /* Start as invisible */
+  opacity: 0; 
 }
 
-/* Staggered animation delays for each button */
 .mood-button:nth-child(1) {
   animation-delay: 0.5s;
 }

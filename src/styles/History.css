@@ -6,7 +6,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 1.2rem;
+    margin: 0;
   }
 
   body.dark-mode
@@ -56,7 +56,7 @@
     position: relative;
     transition: transform 0.2s ease;
     font-family: "Ubuntu", sans-serif;
-    border-left: 8px solid #d4a5a5; /* faux book binding */
+    border-left: 8px solid #d4a5a5; 
   }
 
   body.dark-mode .journal-entry-card {
@@ -548,89 +548,89 @@ body.dark-mode .arrow-button {
 
 @media (max-width: 768px) {
   .history-container {
-    padding: 1rem; /* Reduce padding on smaller screens */
-    margin: 0.8rem; /* Adjust margin for smaller devices */
+    padding: 1rem; 
+    margin: 0; 
   }
 
   .history-header {
-    font-size: 3rem; /* Smaller header size on mobile */
+    font-size: 3rem; 
     margin-bottom: 1rem;
-    text-align: center; /* Center align on smaller screens */
+    text-align: center; 
   }
 
   h2 {
-    font-size: 2rem; /* Adjust h2 font size */
+    font-size: 2rem; 
     margin-left: 0;
     margin-right: 0;
   }
 
   .entries-grid {
-    flex-direction: column; /* Stack entries vertically on small screens */
-    align-items: center; /* Center the content */
-    gap: 1rem; /* Reduced gap between entries */
+    flex-direction: column; 
+    align-items: center; 
+    gap: 1rem; 
     width: 100%;
     max-width: none;
   }
 
   .journal-entry-card {
-    width: 100%; /* Take full width on mobile */
-    max-width: 90%; /* Restrict the max-width */
-    padding: 1rem; /* Adjust padding */
+    width: 100%; 
+    max-width: 90%; 
+    padding: 1rem; 
   }
 
   .entry-mood {
-    font-size: 1.3rem; /* Smaller font size for mood */
+    font-size: 1.3rem; 
   }
 
   .entry-date {
-    font-size: 0.9rem; /* Smaller date font */
+    font-size: 0.9rem; 
   }
 
   .entry-text {
-    font-size: 1.5rem; /* Adjust text size */
+    font-size: 1.5rem; 
   }
 
   .export-button,
   .import-label {
-    font-size: 0.9rem; /* Adjust button font size */
-    padding: 0.6rem 1.2rem; /* Adjust padding */
+    font-size: 0.9rem; 
+    padding: 0.6rem 1.2rem; 
   }
 
   .clear-button,
   .delete-entry-button {
-    font-size: 0.8rem; /* Smaller button text */
-    padding: 0.4rem 0.8rem; /* Adjust padding */
+    font-size: 0.8rem; 
+    padding: 0.4rem 0.8rem; 
   }
 
   .info-box {
-    width: 90%; /* Take more width */
-    max-width: 100%; /* Allow it to take full width */
+    width: 90%; 
+    max-width: 100%; 
   }
 
   .entry-ai-response {
-    font-size: 1.6rem; /* Adjust font size */
-    padding: 1rem; /* Increase padding for better visibility */
+    font-size: 1.6rem; 
+    padding: 1rem; 
   }
 
   .reminder-popup {
-    max-width: 80%; /* Make the reminder smaller on mobile */
+    max-width: 80%; 
     font-size: 1rem;
     padding: 1rem;
   }
 
 
   .entry-navigation button {
-    padding: 0.4rem 0.8rem; /* Smaller button size */
-    font-size: 0.9rem; /* Smaller font size */
+    padding: 0.4rem 0.8rem; 
+    font-size: 0.9rem; 
   }
 
   .page-container {
-    width: 90%; /* Ensure pages fit smaller screens */
+    width: 90%; 
   }
 
   .journal-entry-card {
-    width: 100%; /* Full width for cards */
-    max-width: 100%; /* Full width limit */
+    width: 100%; 
+    max-width: 100%; 
     padding: 1rem;
   }
 
