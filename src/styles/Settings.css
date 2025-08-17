@@ -27,6 +27,22 @@
     font-family: "Ubuntu", sans-serif;
   }
 
+  .disclaimer {
+  color: #810202 !important; 
+  background-color: #ffecec; 
+  padding: 10px;
+  border-left: 4px solid #830862;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+body.dark-mode .disclaimer {
+  background-color: #ae9393;
+  color: #a30101 !important;
+  border-left: 4px solid #560941;
+}
+
+
   body.dark-mode .settings-page-container {
     border-left: 8px solid  #a87575;
     transition: transform 0.2s ease;

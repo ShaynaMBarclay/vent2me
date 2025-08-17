@@ -110,12 +110,15 @@ function Settings() {
     {/* About Section */}
     <div className="about-section-container">
       <h3>About Your Happy Little Journal💖</h3>
+
+      <p class="disclaimer"> <em>If you are experiencing thoughts of harming yourself or others, please reach out immediately to a mental health professional, call your local crisis hotline, or dial your emergency number. The guidance provided in this journal is not professional advice and should never replace the support of a qualified professional.</em></p>
+
       <p>This little journaling app is your cozy corner to untangle thoughts, track emotions, and spot patterns in your day-to-day life. 
         Feeling chatty? Use the speech-to-text feature to vent out loud, no typing required.
-        Need a bit of support? Our friendly AI (powered by Gemini, Google’s smart language model) gently offers feedback, encouragement, or insight based on what you share. 
+        Need a bit of support? Your journal will gently offer feedback, encouragement, or insight based on what you share. 
         It’s like having a thoughtful buddy who actually listens.
-        And yes, every entry, even the ones with AI reflections, can be saved, so you can revisit your thoughts anytime. Simple, supportive, and always here when you need to check in with yourself.</p>
-      
+        And yes, every entry, even the ones with support, can be saved, so you can revisit your thoughts anytime. Simple, supportive, and always here when you need to check in with yourself.</p>
+        
       <p>Your journal entries are stored locally on your device, which means everything you write stays private and never leaves your browser unless you choose to export it. 
         This setup helps keep things simple and secure, but it also means your entries won’t automatically sync across devices. 
         If you switch browsers or clear your cache, your entries might not be there anymore.
