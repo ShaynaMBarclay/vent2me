@@ -117,11 +117,11 @@ body.dark-mode .journal-entry {
 }
 
 body.dark-mode .voice-button {
-  background-color: #4b3c71;
+  background-color: #3d2e62;;
 }
 
 body.dark-mode .submit-button {
-  background-color: #4b3c71;
+  background-color: #3d2e62;
 }
 
 
@@ -151,7 +151,7 @@ body.dark-mode .submit-button:hover {
 }
 
 body.dark-mode .journalhome-button {
-  background-color: #574585;
+  background-color: #3d2e62;
 }
 
 body.dark-mode .journalhome-button:hover {
@@ -159,7 +159,7 @@ body.dark-mode .journalhome-button:hover {
 }
 
 body.dark-mode .history-button {
-  background-color: #574585;
+  background-color: #3d2e62;
 }
 
 .journalhome-button:hover {
@@ -283,7 +283,7 @@ body.dark-mode .ai-response h3 {
 }
 
 body.dark-mode .enter-button {
-  background-color: #4b3c71;
+  background-color: #3d2e62;
 }
 
 .enter-button:hover {
