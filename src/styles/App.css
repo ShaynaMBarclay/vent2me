@@ -24,21 +24,14 @@ html, body {
   }
 
   body {
-    background-color: #fff0f5;
+    background-color: #ffb6b9;
   }
   
   /* Dark mode */
 body.dark-mode {
-  background-color: #90878a;
+  background-color: #3b1250;
 }
 
-  body.dark-mode,
-  body.dark-mode html {
-    background-color: #90878a;
-  }
-
-
-  /* Prevent scroll gaps caused by overflow */
   body {
     overflow-x: hidden;
   }
