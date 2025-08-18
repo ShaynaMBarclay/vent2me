@@ -30,7 +30,7 @@ html, body {
   
   /* Dark mode */
 body.dark-mode {
-  background-color: #3b12509d;
+  background-color: #3b12509d,;
 }
 
 
