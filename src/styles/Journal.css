@@ -107,7 +107,7 @@ body.dark-mode .journal-entry {
 }
 
 .voice-button, .submit-button {
-  background-color: #ffb6b9;
+  background-color: #ff91b8;
   color: white;
   border: none;
   padding: 0.7rem 1.5rem;
@@ -139,7 +139,7 @@ body.dark-mode .submit-button:hover {
 
 .journalhome-button,
 .history-button {
-  background-color: #ffb6b9;
+  background-color: #ff91b8;
   color: white;
   margin: 0.2rem;
   border: none;
@@ -273,7 +273,7 @@ body.dark-mode .ai-response h3 {
 }
 
 .enter-button {
-  background-color: #ffb6b9;
+  background-color: #ff91b8;
   color: white;
   border: none;
   padding: 0.7rem 1.5rem;
