@@ -1,33 +1,37 @@
 import { useEffect, useState } from "react";
 
 function DarkModeToggle() {
-const [isDark, setIsDark] = useState(false);
+  // Default to true for dark mode
+  const [isDark, setIsDark] = useState(true);
 
-useEffect(() => {
+  useEffect(() => {
     const storedTheme = localStorage.getItem("theme");
-    if (storedTheme === "dark") {
-        document.body.classList.add("dark-mode");
-        setIsDark(true);
-    } else {
-        document.body.classList.remove("dark-mode");
-        setIsDark(false);
-    }
-}, []);
 
-const toggleDarkMode = () => {
+    if (storedTheme === "light") {
+      document.body.classList.remove("dark-mode");
+      setIsDark(false);
+    } else {
+      // Default to dark mode if nothing is stored
+      document.body.classList.add("dark-mode");
+      setIsDark(true);
+    }
+  }, []);
+
+  const toggleDarkMode = () => {
     const body = document.body;
 
     if (isDark) {
-        body.classList.remove("dark-mode");
-        localStorage.setItem("theme", "light");
+      body.classList.remove("dark-mode");
+      localStorage.setItem("theme", "light");
     } else {
-        body.classList.add("dark-mode");
-        localStorage.setItem("theme", "dark");
+      body.classList.add("dark-mode");
+      localStorage.setItem("theme", "dark");
     }
-    setIsDark(!isDark);
-};
 
-return (
+    setIsDark(!isDark);
+  };
+
+  return (
     <div className="darkmode-topbar">
       <button className="darkmode-toggle" onClick={toggleDarkMode}>
         {isDark ? "☀️" : "🌙"}

@@ -6,7 +6,7 @@
     min-height: 100vh;
     padding: 0.2rem;
     text-align: center;
-    background: linear-gradient(to bottom, #ffb6b9a1, #ddf0f3);
+    background: #f9d3e1af;
     opacity: 0; 
     animation: fadeIn 1.5s ease-out forwards;
     overflow-y: auto;
