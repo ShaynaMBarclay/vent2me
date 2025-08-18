@@ -6,7 +6,7 @@
     min-height: 100vh;
     padding: 0.2rem;
     text-align: center;
-    background: #f9d3e1af;
+    background: #fbbdd3af;
     opacity: 0; 
     animation: fadeIn 1.5s ease-out forwards;
     overflow-y: auto;
@@ -19,7 +19,7 @@
 
   .home-title {
     font-size: 5rem;
-    color: #fcb4b6;
+    color: #c2fbd7;
     font-family: "Libre Baskerville", serif;
     font-weight: 700; 
     opacity: 0; /* Initially hidden */
@@ -44,7 +44,7 @@
   
   .home-subtitle {
     font-size: 1.6rem;
-    color: #ffa0a3;
+    color: #c2fbd7;
     margin-bottom: 1rem;
     font-family: "Ubuntu", sans-serif;
     font-style: italic;
@@ -58,7 +58,7 @@
   }
   
   .home-button {
-    background-color: #ffb6b9;
+    background-color: #baefcd;
     color: white;
     border: none;
     padding: 0.8rem 2rem;
@@ -81,7 +81,7 @@
   }
   
   .home-button:hover {
-    background-color: #ff7b89;
+    background-color: #8cb49a;
   }
 
   body.dark-mode .home-button:hover {
