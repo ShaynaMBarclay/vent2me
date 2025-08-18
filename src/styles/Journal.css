@@ -10,7 +10,7 @@
 
 body.dark-mode .journal-container {
   background-color: #968794 !important;
-  border: 3px solid #4b3c71 !important;
+  border: 3px solid #6ea79a !important;
 }
 
 h2 {
@@ -97,7 +97,7 @@ body.dark-mode .custom-mood {
 body.dark-mode .journal-entry {
   background-color: #383838;
   color: white;
-  border: 3px solid #4b3c71;
+  border: 3px solid #6ea79a;
 }
 
 .journal-actions {
