@@ -383,8 +383,8 @@ body.dark-mode .toggle-advice {
   bottom: 110%;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #fce9f9;
-  color: rgb(73, 73, 73);
+  background-color: #fed1f9c8;
+  color: rgb(8, 8, 8);
   padding: 2rem;
   border-radius: 20rem;
   visibility: hidden;
@@ -421,8 +421,8 @@ body.dark-mode .tip-bubble {
 
 
 body.dark-mode .tip-info {
-background-color: #6f656d;
-color:  #f8d9d9;
+background-color: #a98ba6d7;
+color:  #ffdfdf;
 
 }
 
