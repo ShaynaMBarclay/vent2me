@@ -20,7 +20,6 @@ h2 {
   margin-bottom: 1.3rem;
   font-family: "Ubuntu", sans-serif;
   font-size: 30px;
-  
   animation-name: popOutAndBack;
   animation-duration: 1.2s;
   animation-delay: 0.5s;
@@ -70,6 +69,7 @@ body.dark-mode h2 {
   font-size: 14px;
   width: 220px;
   box-sizing: border-box;
+  
 }
 
 body.dark-mode .custom-mood {
@@ -98,6 +98,7 @@ body.dark-mode .journal-entry {
   background-color: #383838;
   color: white;
   border: 3px solid #6ea79a;
+  
 }
 
 .journal-actions {

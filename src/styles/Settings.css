@@ -4,7 +4,7 @@
     max-width: 600px;
     margin: 6rem 4rem;
     padding: 3rem;
-    background-color: #fff;
+    background-color: #fc65a61f;
     border: 3px solid #000000;
     border-radius: 25px;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
@@ -191,7 +191,7 @@ body.dark-mode .disclaimer {
   .about-section-container {
     flex: 1 1 300px;
     max-width: 500px;
-    background-color: #fffef9;
+    background-color: #fbc4dcc0;
     border: 1px solid #e0d6c600;
     border-left: 8px solid #d79696;
     border-radius: 12px;
@@ -232,7 +232,7 @@ body.dark-mode .disclaimer {
   }
 
   .tip-box {
-    background-color: #fffaf6;
+    background-color: #fbc4dcc0;
     border: 1px solid #e0d6c600;
     border-left: 8px solid #d79696;
     border-radius: 8px;
@@ -305,7 +305,7 @@ body.dark-mode .disclaimer {
   .add-homescreen {
     flex: 1 1 300px;
     max-width: 500px;
-    background-color: #fffef9;
+    background-color: #fbc4dcc0;
     border: 1px solid #e0d6c600;
     border-left: 8px solid #d79696;
     border-radius: 12px;
