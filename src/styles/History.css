@@ -1,7 +1,7 @@
 .history-container {
    overflow-x: hidden;
     padding: 2rem;
-    background-color: #fff0f5; 
+    background-color: #ffccdfd4; 
     min-height: 100vh;
     font-family: 'Georgia', serif;
     display: flex;
@@ -13,7 +13,7 @@
 
   body.dark-mode
   .history-container {
-    background-color: #968794;
+    background-color: #42225292;
   }
   
   .history-header {
