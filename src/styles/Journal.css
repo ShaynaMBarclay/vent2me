@@ -6,14 +6,11 @@
   background-color: #fffdfc;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   border: 3px solid #ffb6b9;
-  
 }
 
 body.dark-mode .journal-container {
   background-color: #968794 !important;
   border: 3px solid #4b3c71 !important;
-
-
 }
 
 h2 {
@@ -27,7 +24,7 @@ h2 {
   animation-name: popOutAndBack;
   animation-duration: 1.2s;
   animation-delay: 0.5s;
-  animation-fill-mode: forwards; /* <-- keeps the final state */
+  animation-fill-mode: forwards; 
   animation-timing-function: ease-out;
 }
 
