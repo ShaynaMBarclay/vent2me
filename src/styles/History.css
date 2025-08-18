@@ -1,7 +1,7 @@
 .history-container {
    overflow-x: hidden;
     padding: 2rem;
-    background-color: #ffccdfd4; 
+    background-color: #fcd5e3d4; 
     min-height: 100vh;
     font-family: 'Georgia', serif;
     display: flex;
@@ -13,7 +13,7 @@
 
   body.dark-mode
   .history-container {
-    background-color: #42225292;
+    background-color: #5e3f6e;
   }
   
   .history-header {
@@ -29,6 +29,7 @@
     margin-left: 5rem;
     margin-right: 1rem;
     font-family: "Libre Baskerville", serif;
+    
   }
   
   .entries-grid {
