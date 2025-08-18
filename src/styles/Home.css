@@ -76,12 +76,12 @@
   }
 
   body.dark-mode .home-button {
-    background-color: #6ea79a;
+    background-color: #93c9bc;
     color: #422252b2;
   }
   
   .home-button:hover {
-    background-color: #8cb49a;
+    background-color: #bbe1c8;
   }
 
   body.dark-mode .home-button:hover {
