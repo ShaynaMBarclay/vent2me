@@ -24,13 +24,13 @@ html, body {
   }
 
   body {
-    background-color: #ffb6b9a9;
+    background-color: #ffb6b965;
     
   }
   
   /* Dark mode */
 body.dark-mode {
-  background-color: #3b1250bd;
+  background-color: #3b125061;
 }
 
 
