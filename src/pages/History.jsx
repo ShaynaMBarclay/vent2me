@@ -5,12 +5,20 @@ import '../styles/History.css';
 
 function History() {
   const [entries, setEntries] = useState([]);
-  const [isInfoOpen, setIsInfoOpen] = useState(true);
+  const [isInfoOpen, setIsInfoOpen] = useState(() => {
+    const saved = localStorage.getItem('isInfoOpen');
+    return saved === null ? true : saved === 'true';
+  });
   const navigate = useNavigate();
   const [showReminder, setShowReminder] = useState(false);
   const [expandedAdviceId, setExpandedAdviceId] = useState(null);
   const [currentPage, setCurrentPage] = useState(0);
   const [flipDirection, setFlipDirection] = useState(null);
+
+  const toggleInfo = (value) => {
+    setIsInfoOpen(value);
+    localStorage.setItem('isInfoOpen', value);
+  };
 
   useEffect(() => {
     const dismissedPermanently = localStorage.getItem('dismissExportReminder');
@@ -29,18 +37,19 @@ function History() {
     setEntries(saved);
   }, []);
 
- const handleExport = () => {
-  setTimeout(() => {
-    const data = JSON.stringify(entries, null, 2);
-    const blob = new Blob([data], { type: 'application/json' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'my-journal-entries.json';
-    a.click();
-    URL.revokeObjectURL(url);
-  }, 0);
-};
+  const handleExport = () => {
+    setTimeout(() => {
+      const data = JSON.stringify(entries, null, 2);
+      const blob = new Blob([data], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'my-journal-entries.json';
+      a.click();
+      URL.revokeObjectURL(url);
+    }, 0);
+  };
+
   const handleImport = (event) => {
     const file = event.target.files[0];
     if (!file) return;
@@ -88,7 +97,7 @@ function History() {
       setTimeout(() => {
         setCurrentPage(currentPage + 1);
         setFlipDirection(null);
-      }, 300); // match animation duration
+      }, 300);
     }
   };
 
@@ -121,43 +130,39 @@ function History() {
         <button onClick={handleClearAll} className="clear-button">🗑️ Clear All Entries</button>
       </div>
 
-     
       {entries.length === 0 ? (
-  <p className="no-entries">No entries yet.</p>
-) : (
+        <p className="no-entries">No entries yet.</p>
+      ) : (
+        <div className="page-container">
+          <div
+            key={currentEntry.id}
+            className={`journal-entry-card ${flipDirection === 'next' ? 'flip-next' : ''} ${flipDirection === 'prev' ? 'flip-prev' : ''}`}
+          >
+            <button onClick={() => handleDelete(currentEntry.id)} className="delete-entry-button">Delete</button>
+            <div className="entry-mood">Mood: <strong>{currentEntry.mood}</strong></div>
+            <div className="entry-date">{new Date(currentEntry.date).toLocaleString()}</div>
+            <p className="entry-text">{currentEntry.text}</p>
+            {currentEntry.aiResponse && (
+              <div className="entry-ai-response">
+                <strong
+                  className="toggle-advice"
+                  onClick={() =>
+                    setExpandedAdviceId(expandedAdviceId === currentEntry.id ? null : currentEntry.id)
+                  }
+                >
+                  {expandedAdviceId === currentEntry.id ? 'Hide Advice' : 'Show Advice'}
+                </strong>
+                {expandedAdviceId === currentEntry.id && <p>{currentEntry.aiResponse}</p>}
+              </div>
+            )}
+          </div>
 
-  <div className="page-container">
- <div
-  key={currentEntry.id}
-  className={`journal-entry-card ${flipDirection === 'next' ? 'flip-next' : ''} ${flipDirection === 'prev' ? 'flip-prev' : ''}`}
->
-    <button onClick={() => handleDelete(currentEntry.id)} className="delete-entry-button">Delete</button>
-    <div className="entry-mood">Mood: <strong>{currentEntry.mood}</strong></div>
-    <div className="entry-date">{new Date(currentEntry.date).toLocaleString()}</div>
-    <p className="entry-text">{currentEntry.text}</p>
-    {currentEntry.aiResponse && (
-      <div className="entry-ai-response">
-        <strong
-          className="toggle-advice"
-          onClick={() =>
-            setExpandedAdviceId(expandedAdviceId === currentEntry.id ? null : currentEntry.id)
-          }
-        >
-          {expandedAdviceId === currentEntry.id ? 'Hide Advice' : 'Show Advice'}
-        </strong>
-        {expandedAdviceId === currentEntry.id && <p>{currentEntry.aiResponse}</p>}
-      </div>
-    )}
-  </div>
-
-  <div className="page-controls">
-    <button onClick={prevPage} disabled={currentPage === 0} className="arrow-button left-arrow">←</button>
-    <button onClick={nextPage} disabled={currentPage === entries.length - 1} className="arrow-button right-arrow">→</button>
-  </div>
-</div>
-
-
-)}
+          <div className="page-controls">
+            <button onClick={prevPage} disabled={currentPage === 0} className="arrow-button left-arrow">←</button>
+            <button onClick={nextPage} disabled={currentPage === entries.length - 1} className="arrow-button right-arrow">→</button>
+          </div>
+        </div>
+      )}
 
       {showReminder && (
         <div className="reminder-overlay">
@@ -177,24 +182,25 @@ function History() {
         </div>
       )}
 
-       <div className="info-toggle-section">
+      <div className="info-toggle-section">
         {isInfoOpen ? (
           <div className="info-box">
-            <button onClick={() => setIsInfoOpen(false)} className="toggle-info-button inside">
+            <button onClick={() => toggleInfo(false)} className="toggle-info-button inside">
               Hide Info
             </button>
             <p><strong>FYI:</strong></p>
             <p>Your journal entries are safely stored only on this device. This means that if you switch to a different device, clear your browser’s cache, or possibly switch browsers, your entries will no longer be available. To keep them safe and transfer them to another device, you can export your entries and import them wherever you need them. If you ever need to, you can also delete any duplicate entries. Just remember to export your entries before clearing your cache or switching browsers, or switching devices, as doing so may erase your entries permanently.</p>
           </div>
         ) : (
-          <button onClick={() => setIsInfoOpen(true)} className="toggle-info-button">Show Info</button>
+          <button onClick={() => toggleInfo(true)} className="toggle-info-button">Show Info</button>
         )}
       </div>
- <div className="tip-container">
+
+      <div className="tip-container">
         <div className="tip-bubble">
           <span className="tip-text">A <br />Tip❤️</span>
           <div className="tip-info">
-            <p>To sync across devices or browsers, export your entries after each new one, email them to yourself, then go to your other device, click 'Clear All Entries,' and re-import the updated entries. Or keep seperate entries on seperate devices. I dont judge😈</p>
+            <p>To sync across devices or browsers, export your entries after each new one, email them to yourself, then go to your other device, click 'Clear All Entries,' and re-import the updated entries. Or keep separate entries on separate devices. I don't judge😈</p>
           </div>
         </div>
       </div>
