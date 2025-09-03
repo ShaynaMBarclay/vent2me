@@ -109,7 +109,7 @@ body.dark-mode .disclaimer {
   .settings-contact-form {
     display: flex;
     flex-direction: column;
-    gap: 0.8rem;
+    gap: 2rem;
   }
   
   .settings-label {
@@ -164,7 +164,7 @@ body.dark-mode .disclaimer {
   }
 
   .settings-input {
-    padding: 0.7rem;
+    padding: 2rem;
   }
 
   body.dark-mode .settings-input {
