@@ -33,6 +33,41 @@ body.dark-mode {
   background-color: #5c396e;
 }
 
+/* Custom Scrollbar */
+body::-webkit-scrollbar {
+  width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #ffccdfd4;
+  border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #c2fbd7;
+  border-radius: 10px;
+  border: 3px solid #ffccdfd4;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background-color: #91f8b7;
+}
+
+/* Dark mode scrollbar */
+body.dark-mode::-webkit-scrollbar-track {
+  background: #5c396e;
+}
+
+body.dark-mode::-webkit-scrollbar-thumb {
+  background-color: #6ea79a;
+  border: 3px solid #5c396e;
+}
+
+body.dark-mode::-webkit-scrollbar-thumb:hover {
+  background-color: #568379;
+}
+
+
 
 
  
