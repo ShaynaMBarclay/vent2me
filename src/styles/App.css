@@ -67,6 +67,80 @@ body.dark-mode::-webkit-scrollbar-thumb:hover {
   background-color: #568379;
 }
 
+/* Custom Scrollbar for page */
+body::-webkit-scrollbar {
+  width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #ffccdfd4;
+  border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #c2fbd7;
+  border-radius: 10px;
+  border: 3px solid #ffccdfd4;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background-color: #91f8b7;
+}
+
+/* Dark mode scrollbar for page */
+body.dark-mode::-webkit-scrollbar-track {
+  background: #5c396e;
+}
+
+body.dark-mode::-webkit-scrollbar-thumb {
+  background-color: #6ea79a;
+  border: 3px solid #5c396e;
+}
+
+body.dark-mode::-webkit-scrollbar-thumb:hover {
+  background-color: #568379;
+}
+
+/* Journal entry + AI response scrollbar */
+.journal-entry::-webkit-scrollbar,
+.ai-response::-webkit-scrollbar {
+  width: 10px;
+}
+
+.journal-entry::-webkit-scrollbar-track,
+.ai-response::-webkit-scrollbar-track {
+  background: #ffccdfd4;
+  border-radius: 10px;
+}
+
+.journal-entry::-webkit-scrollbar-thumb,
+.ai-response::-webkit-scrollbar-thumb {
+  background-color: #c2fbd7;
+  border-radius: 10px;
+  border: 2px solid #ffccdfd4;
+}
+
+.journal-entry::-webkit-scrollbar-thumb:hover,
+.ai-response::-webkit-scrollbar-thumb:hover {
+  background-color: #91f8b7;
+}
+
+/* Dark mode for journal + AI response */
+body.dark-mode .journal-entry::-webkit-scrollbar-track,
+body.dark-mode .ai-response::-webkit-scrollbar-track {
+  background: #5c396e;
+}
+
+body.dark-mode .journal-entry::-webkit-scrollbar-thumb,
+body.dark-mode .ai-response::-webkit-scrollbar-thumb {
+  background-color: #6ea79a;
+  border: 2px solid #5c396e;
+}
+
+body.dark-mode .journal-entry::-webkit-scrollbar-thumb:hover,
+body.dark-mode .ai-response::-webkit-scrollbar-thumb:hover {
+  background-color: #568379;
+}
 
 
 
