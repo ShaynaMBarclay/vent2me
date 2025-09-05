@@ -85,9 +85,9 @@ function Journal() {
         const mood = selectedMood || customMood.trim();
         if (!mood || !entry.trim()) return;
     
-        setIsAiLoading(true); // Set loading to true before the API call
-        setAiResponse(''); // Clear any previous response
-        setError(''); // Clear any previous error messages
+        setIsAiLoading(true); 
+        setAiResponse(''); 
+        setError(''); 
     
         try {
             const response = await axios.post(`https://vent2meserver.onrender.com/gemini`, {
@@ -130,7 +130,7 @@ function Journal() {
             date: new Date().toISOString(),
         };
 
-        // Store entry in localStorage (optional)
+       
         const existingEntries = JSON.parse(localStorage.getItem('journalEntries')) || [];
         existingEntries.unshift(newEntry);
         localStorage.setItem('journalEntries', JSON.stringify(existingEntries));
@@ -149,7 +149,7 @@ function Journal() {
             console.log('AI Response:', entry.aiResponse);  // Log the AI response
         });
 
-        setEntries(savedEntries);  // Set entries in state
+        setEntries(savedEntries);  
     }, []);
 
     return (
