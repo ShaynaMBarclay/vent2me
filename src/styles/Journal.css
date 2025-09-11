@@ -3,7 +3,7 @@
   margin: 4rem auto;
   padding: 4rem 5rem 4rem 3rem;
   border-radius: 12px;
-  background-color: #fc65a61f;
+  background-color: #feb3d4;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   border: 3px solid #c2fbd7;
 }
@@ -16,7 +16,7 @@ body.dark-mode .journal-container {
 h2 {
   opacity: 0; /* start hidden */
   text-align: center;
-  color: #fd79a7;
+  color: #fd6ea0;
   margin-bottom: 1.3rem;
   font-family: "Ubuntu", sans-serif;
   font-size: 30px;
@@ -107,7 +107,7 @@ body.dark-mode .journal-entry {
 }
 
 .voice-button, .submit-button {
-  background-color: #ff91b8;
+  background-color: #fd6ea0;
   color: white;
   border: none;
   padding: 0.7rem 1.5rem;
@@ -127,7 +127,7 @@ body.dark-mode .submit-button {
 
 
 .voice-button:hover, .submit-button:hover {
-  background-color: #ff7b89;
+  background-color: #fe4d8b;
 }
 
 body.dark-mode .voice-button:hover {
@@ -140,7 +140,7 @@ body.dark-mode .submit-button:hover {
 
 .journalhome-button,
 .history-button {
-  background-color: #ff91b8;
+  background-color: #fd6ea0;
   color: white;
   margin: 0.2rem;
   border: none;
@@ -164,10 +164,10 @@ body.dark-mode .history-button {
 }
 
 .journalhome-button:hover {
-  background-color: #ff7b89;
+  background-color: #fe4d8b;
 }
 .history-button:hover {
-  background-color: #ff7b89;
+  background-color: #fe4d8b;
 }
 
 body.dark-mode .history-button:hover {
@@ -274,7 +274,7 @@ body.dark-mode .ai-response h3 {
 }
 
 .enter-button {
-  background-color: #ff91b8;
+  background-color: #fd6ea0;
   color: white;
   border: none;
   padding: 0.7rem 1.5rem;
@@ -288,7 +288,7 @@ body.dark-mode .enter-button {
 }
 
 .enter-button:hover {
-  background-color: #ff7b89;
+  background-color: #fe4d8b;
 }
 
 body.dark-mode .enter-button:hover {
