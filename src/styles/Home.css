@@ -6,7 +6,7 @@
     min-height: 100vh;
     padding: 0.2rem;
     text-align: center;
-    background: #fcd5e3d4;
+    background: #fbacc8;
     opacity: 0; 
     animation: fadeIn 1.5s ease-out forwards;
     overflow-y: auto;
@@ -59,7 +59,7 @@
   
   .home-button {
     background-color: #baefcd;
-    color: rgb(185, 144, 168);
+    color: #ff91b8;
     border: none;
     padding: 0.8rem 2rem;
     font-size: 1rem;

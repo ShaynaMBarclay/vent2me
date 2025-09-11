@@ -9,14 +9,14 @@
 }
 
 body.dark-mode .journal-container {
-  background-color: #968794 !important;
+  background-color: #967998 !important;
   border: 3px solid #6ea79a !important;
 }
 
 h2 {
   opacity: 0; /* start hidden */
   text-align: center;
-  color: #5c5470;
+  color: #fd79a7;
   margin-bottom: 1.3rem;
   font-family: "Ubuntu", sans-serif;
   font-size: 30px;
@@ -117,7 +117,8 @@ body.dark-mode .journal-entry {
 }
 
 body.dark-mode .voice-button {
-  background-color: #3d2e62;;
+  background-color: #3d2e62;
+  
 }
 
 body.dark-mode .submit-button {
