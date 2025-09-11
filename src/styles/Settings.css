@@ -192,7 +192,7 @@ body.dark-mode .disclaimer {
   .about-section-container {
     flex: 1 1 300px;
     max-width: 500px;
-    background-color: #fbc4dcc0;
+    background-color: #ffa9ce;
     border: 1px solid #e0d6c600;
     border-left: 8px solid #d79696;
     border-radius: 12px;
@@ -233,7 +233,7 @@ body.dark-mode .disclaimer {
   }
 
   .tip-box {
-    background-color: #fbc4dcc0;
+    background-color: #ffa9ce;
     border: 1px solid #e0d6c600;
     border-left: 8px solid #d79696;
     border-radius: 8px;
@@ -306,7 +306,7 @@ body.dark-mode .disclaimer {
   .add-homescreen {
     flex: 1 1 300px;
     max-width: 500px;
-    background-color: #fbc4dcc0;
+    background-color: #ffa9ce;
     border: 1px solid #e0d6c600;
     border-left: 8px solid #d79696;
     border-radius: 12px;
