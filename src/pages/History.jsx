@@ -198,7 +198,7 @@ function History() {
 
       <div className="tip-container">
         <div className="tip-bubble">
-          <span className="tip-text">A <br />Tip❤️</span>
+          <span className="tip-text">❤️Here's <br/> a tip❤️</span>
           <div className="tip-info">
             <p>To sync across devices or browsers, export your entries after each new one, email them to yourself, then go to your other device, click 'Clear All Entries,' and re-import the updated entries. Or keep separate entries on separate devices. I don't judge😈</p>
           </div>
