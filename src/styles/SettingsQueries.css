@@ -18,7 +18,7 @@
     }
   
     .tip-box {
-      max-width: 90%; /* Makes the tip box responsive */
+      max-width: 90%; 
     }
   
     .message-textarea {

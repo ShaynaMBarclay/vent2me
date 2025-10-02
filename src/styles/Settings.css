@@ -24,10 +24,14 @@
     );
     background-size: 100% 25px;
     border-left: 8px solid #d79696;
-    font-family: "Ubuntu", sans-serif;
+  }
+
+  p {
+    font-family: "Indie Flower", cursive !important;
   }
 
   .disclaimer {
+  font-family: "Caveat", cursive;
   color: #810202 !important; 
   background-color: #ffecec; 
   padding: 10px;
@@ -60,13 +64,12 @@ body.dark-mode .disclaimer {
   /* Navigation header */
   .settings-header {
     display: flex;
-    justify-content: center; /* Center horizontally */
+    justify-content: center; 
     align-items: center;
     gap: 1rem;
     margin-bottom: 1.5rem;
     margin-top: 5rem; 
-    font-family: "Ubuntu", sans-serif;
-    z-index: 1000; /* Make sure it's not being hidden */
+    z-index: 1000; 
   }
   
   .settings-nav-button {
@@ -96,13 +99,14 @@ body.dark-mode .disclaimer {
     font-size: 2.4rem;
     margin-bottom: 1rem;
     color: #333;
-    font-family: "Ubuntu", sans-serif;
+    font-family: "Caveat", cursive;
   }
   
   /* Success message */
   .settings-success-message {
     color: green;
     font-weight: bold;
+    font-family: "Indie Flower", cursive !important;
   }
   
   /* Form and its fields */
@@ -110,12 +114,14 @@ body.dark-mode .disclaimer {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    font-family: "Indie Flower", cursive !important;
   }
   
   .settings-label {
     font-size: 20px;
     font-weight: bold;
     color: #444;
+    font-family: "Indie Flower", cursive !important;
   }
   
   .message-label {
@@ -146,7 +152,7 @@ body.dark-mode .disclaimer {
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    font-family: "Ubuntu", sans-serif;
+    font-family: "Indie Flower", cursive !important;
     transition: background-color 0.3s ease;
   }
 
@@ -176,7 +182,7 @@ body.dark-mode .disclaimer {
   .message-textarea {
     padding: 1rem;
     min-height: 150px;
-    font-family: "Ubuntu", sans-serif;
+    font-family: "Indie Flower", cursive !important;
     font-size: 1rem;
     line-height: 1.5;
     resize: vertical;
@@ -197,7 +203,7 @@ body.dark-mode .disclaimer {
     border-left: 8px solid #d79696;
     border-radius: 12px;
     padding: 2rem;
-    font-family: "Ubuntu", sans-serif;
+    font-family: "Indie Flower", cursive !important;
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.05);
     margin-bottom: 4rem;
   }
@@ -210,8 +216,8 @@ body.dark-mode .disclaimer {
   }
   
   .about-section-container h3 {
-    font-size: 24px;
-    font-family: "Ubuntu", sans-serif;
+    font-size: 1.7rem;
+    font-family: "Caveat", cursive;
     color: #333;
   }
 
@@ -254,6 +260,7 @@ body.dark-mode .disclaimer {
         font-size: 2rem;
         margin-bottom: 0.3rem;
         color: #1e1c1c;
+        font-family: "Caveat", cursive;
       }
     
       body.dark-mode .tip-box h3 {
@@ -262,7 +269,7 @@ body.dark-mode .disclaimer {
     
   
   .tip-box p {
-    font-size: 1rem;
+    font-size: 1.4rem;
     padding: 1rem;
     margin: 0.4rem auto;
     font-style: italic;
@@ -271,7 +278,7 @@ body.dark-mode .disclaimer {
     line-height: 1.4rem;
     text-align: center; 
     max-width: 50%;
-    font-family: "Ubuntu", sans-serif;
+    
   }
 
   body.dark-mode .tip-box p {
@@ -289,6 +296,7 @@ body.dark-mode .disclaimer {
     cursor: pointer;
     transition: background-color 0.3s ease;
     margin-bottom: 1rem;
+    font-family: "Indie Flower", cursive !important;
   }
 
   body.dark-mode .tip-button {
@@ -311,7 +319,6 @@ body.dark-mode .disclaimer {
     border-left: 8px solid #d79696;
     border-radius: 12px;
     padding: 2rem;
-    font-family: "Ubuntu", sans-serif;
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.05);
     margin-bottom: 4rem;
   }
@@ -324,7 +331,7 @@ body.dark-mode .disclaimer {
 
   .add-homescreen h3 {
     font-size: 24px;
-    font-family: "Ubuntu", sans-serif;
+    font-family: "Indie Flower", cursive !important;
     color: #333;
   }
 
@@ -334,7 +341,7 @@ body.dark-mode .disclaimer {
 
   .add-homescreen h4 {
     font-size: 24px;
-    font-family: "Ubuntu", sans-serif;
+    font-family: "Indie Flower", cursive !important;
     color: #333;
   }
 
@@ -348,7 +355,7 @@ body.dark-mode .disclaimer {
     line-height: 1.6rem;
     font-style: italic;
     color: #555;
-    font-family: "Ubuntu", sans-serif;
+    font-family: "Indie Flower", cursive !important;
   }
 
   body.dark-mode .add-homescreen p {
@@ -356,10 +363,10 @@ body.dark-mode .disclaimer {
   }
 
   .add-homescreen li {
-    font-size: 1rem;
+    font-size: 1.3rem;
     line-height: 1.7rem;
     color: #000000;
-    font-family: "Ubuntu", sans-serif;
+    font-family: "Caveat", cursive;
   }
 
   body.dark-mode .add-homescreen li {

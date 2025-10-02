@@ -598,11 +598,11 @@ body.dark-mode .arrow-button {
   }
 
   .entry-mood {
-    font-size: 1.3rem; 
+    font-size: 1.8rem !important; 
   }
 
   .entry-date {
-    font-size: 0.9rem; 
+    font-size: 1.3rem !important; 
   }
 
   .entry-text {
@@ -611,19 +611,24 @@ body.dark-mode .arrow-button {
 
   .export-button,
   .import-label {
-    font-size: 0.9rem; 
+    font-size: 1.1rem; 
     padding: 0.6rem 1.2rem; 
   }
 
   .clear-button,
   .delete-entry-button {
-    font-size: 0.8rem; 
+    font-size: 1.1rem; 
     padding: 0.4rem 0.8rem; 
   }
 
   .info-box {
     width: 90%; 
     max-width: 100%; 
+    
+  }
+
+  .info-box p {
+   font-size: 1rem !important;
   }
 
   .entry-ai-response {
