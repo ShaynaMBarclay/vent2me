@@ -54,10 +54,10 @@ function Settings() {
   <p>
     If this little app makes your day brighter, consider leaving a tiny tip! 🧁 
     It helps keep the journal free and supports future updates, big and small 💖
-    Created by Shayna Marie
+    Created by Shaydotexe
   </p>
   <a 
-    href="https://paypal.me/Sylvariae?country.x=US&locale.x=en_US" 
+    href="https://ko-fi.com/shaydotexe" 
     target="_blank" 
     rel="noopener noreferrer"
   >
