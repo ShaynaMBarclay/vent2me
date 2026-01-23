@@ -1,0 +1,156 @@
+@media (min-width: 3000px) {
+
+  body { font-size: 1.4rem; }
+
+  /* Home */
+  .home-title { font-size: 7rem; }
+  .home-subtitle { font-size: 3rem; }
+  .home-button { font-size: 2rem; }
+
+  /* History */
+  .history-header { font-size: 8rem; }
+  h2 { font-size: 4rem; }
+
+  .entry-mood { font-size: 2.6rem; }
+  .entry-date { font-size: 1.8rem; }
+  .entry-text { font-size: 2rem; }
+
+  .journal-entry-card { font-size: 1.6rem; }
+
+  /* Buttons */
+  .export-button,
+  .import-label,
+  .clear-button,
+  .delete-entry-button {
+    font-size: 1.6rem;
+  }
+
+  /* Info boxes */
+  .info-box p,
+  .info-box strong {
+    font-size: 1.8rem;
+  }
+
+  /* Journal page */
+  .journal-container { max-width: 1400px; }
+
+  .custom-mood { font-size: 2rem; }
+  .journal-entry { font-size: 1.7rem; }
+
+  .voice-button,
+  .submit-button,
+  .enter-button {
+    font-size: 1.8rem;
+  }
+
+  .mood-button { font-size: 2.4rem; }
+
+  .highlighted-mood { font-size: 1.8rem; }
+  .highlighted-mood h3 { font-size: 2.3rem; }
+
+  /* AI response */
+  .ai-response { font-size: 2.4rem; }
+  .ai-response h3 { font-size: 2.6rem; }
+  .ai-response p { font-size: 1.7rem; }
+
+  /* Settings */
+  .settings-title { font-size: 3.2rem; }
+  .settings-label,
+  .message-label { font-size: 1.6rem; }
+
+  .message-submit-button { font-size: 2rem; }
+
+  .about-section-container h3 { font-size: 2.4rem; }
+  .about-section-container p { font-size: 1.4rem; }
+
+  .tip-box h3 { font-size: 2.6rem; }
+  .tip-box p { font-size: 1.8rem; }
+
+  .add-homescreen h3,
+  .add-homescreen h4 { font-size: 2.2rem; }
+
+  .add-homescreen p,
+  .add-homescreen li { font-size: 1.6rem; }
+}
+
+@media (min-width: 3800px) {
+
+  body { font-size: 1.65rem; }
+
+  .home-title { font-size: 9rem; }
+  .home-subtitle { font-size: 3.6rem; }
+  .home-button { font-size: 2.4rem; }
+
+  .history-header { font-size: 10rem; }
+  h2 { font-size: 4.8rem; }
+
+  .entry-mood { font-size: 3.2rem; }
+  .entry-date { font-size: 2.2rem; }
+  .entry-text { font-size: 2.4rem; }
+
+  .journal-entry-card { font-size: 1.9rem; }
+
+  .export-button,
+  .import-label,
+  .clear-button,
+  .delete-entry-button {
+    font-size: 1.9rem;
+  }
+
+  .info-box p,
+  .info-box strong {
+    font-size: 2.2rem;
+  }
+
+  .journal-container { max-width: 1700px; }
+
+  .custom-mood { font-size: 2.4rem; }
+  .journal-entry { font-size: 2rem; }
+
+  .voice-button,
+  .submit-button,
+  .enter-button {
+    font-size: 2.2rem;
+  }
+
+  .mood-button { font-size: 2.9rem; }
+
+  .highlighted-mood { font-size: 2.2rem; }
+  .highlighted-mood h3 { font-size: 2.8rem; }
+
+  .ai-response { font-size: 2.8rem; }
+  .ai-response h3 { font-size: 3rem; }
+  .ai-response p { font-size: 2rem; }
+
+  .settings-title { font-size: 3.8rem; }
+  .settings-label,
+  .message-label { font-size: 1.9rem; }
+
+  .message-submit-button { font-size: 2.4rem; }
+
+  .about-section-container h3 { font-size: 2.8rem; }
+  .about-section-container p { font-size: 1.7rem; }
+
+  .tip-box h3 { font-size: 3rem; }
+  .tip-box p { font-size: 2.2rem; }
+
+  .add-homescreen h3,
+  .add-homescreen h4 { font-size: 2.6rem; }
+
+  .add-homescreen p,
+  .add-homescreen li { font-size: 1.9rem; }
+}
+
+@media (min-width: 4800px) {
+
+  body { font-size: 1.9rem; }
+
+  .home-title { font-size: 11rem; }
+  .history-header { font-size: 12rem; }
+
+  .mood-button { font-size: 3.4rem; }
+
+  .ai-response { font-size: 3.2rem; }
+
+  .settings-title { font-size: 4.4rem; }
+}
