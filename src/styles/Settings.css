@@ -2,7 +2,7 @@
 .settings-page-container {
     flex: 1 1 400px;
     max-width: 600px;
-    margin: 6rem 4rem;
+    margin: 6rem 2rem;
     padding: 3rem;
     background-color: #fc65a61f;
     border: 3px solid #000000;
@@ -170,7 +170,7 @@ body.dark-mode .disclaimer {
   }
 
   .settings-input {
-    padding: 2rem;
+    padding: 0.8rem;
   }
 
   body.dark-mode .settings-input {
@@ -205,14 +205,12 @@ body.dark-mode .disclaimer {
     padding: 2rem;
     font-family: "Indie Flower", cursive !important;
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.05);
-    margin-bottom: 4rem;
+    margin-bottom: 7rem;
   }
 
   body.dark-mode .about-section-container {
     background-color: #5e4a4a;
     border-left: 8px solid #a87575;
-    
-    
   }
   
   .about-section-container h3 {

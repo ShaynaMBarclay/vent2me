@@ -200,7 +200,7 @@ function History() {
         <div className="tip-bubble">
           <span className="tip-text">❤️Here's <br/> a tip❤️</span>
           <div className="tip-info">
-            <p>To sync across devices or browsers, export your entries after each new one, email them to yourself, then go to your other device, click 'Clear All Entries,' and re-import the updated entries. Or keep separate entries on separate devices. I don't judge😈</p>
+            <p>Want to use your journal on more than one device? Export your entries after each new one and save them somewhere easy to access (email works great!). On another device, clear the existing entries and re-import the updated file. Or keep separate journals on different devices, totally up to you 💕</p>
           </div>
         </div>
       </div>

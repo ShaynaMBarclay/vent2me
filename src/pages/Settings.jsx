@@ -120,7 +120,7 @@ function Settings() {
         And yes, every entry, even the ones with support, can be saved, so you can revisit your thoughts anytime. Simple, supportive, and always here when you need to check in with yourself.</p>
         
       <p>Your journal entries are stored locally on your device, which means everything you write stays private and never leaves your browser unless you choose to export it. 
-        This setup helps keep things simple and secure, but it also means your entries won’t automatically sync across devices. 
+        This setup helps keep things simple and secure, I know this may seem weird or annoying, but it ensures your entries are yours only, not even I can see them. But it also means your entries won’t automatically sync across devices. 
         If you switch browsers or clear your cache, your entries might not be there anymore.
         To help with that, the app lets you export your entries as a backup and import them later if needed. 
         It’s a good habit to export your journal occasionally, just in case your device resets or a glitch sneaks in. That way, your thoughts are safe and easy to restore whenever you need them.</p>

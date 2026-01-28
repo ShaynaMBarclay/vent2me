@@ -243,7 +243,7 @@
     color: #333;
     border: 3px solid #d8a4a4;
     border-radius: 8px;
-    padding: 2.3rem 1rem;
+    padding: 1rem;
     cursor: pointer;
     transition: background-color 0.2s ease;
     font-size: 0.9rem;
@@ -258,7 +258,7 @@
   line-height: 1.9;
   font-weight: 600;
   font-family: "Caveat", cursive;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
 }
 
 .info-box strong {
@@ -374,12 +374,12 @@ body.dark-mode .toggle-advice {
   cursor: pointer;
   background-color: #fed1f9;
   padding: 11px;
-  border-radius: 15rem;
+  border-radius: 50rem;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
   font-family: "Indie Flower", cursive !important;
   border: 3px solid #fe4d8b;
   text-align: center;
-  font-size: 13px;
+  font-size: 16px;
   margin-bottom: 2rem;
 }
 
@@ -415,7 +415,7 @@ body.dark-mode .toggle-advice {
   color: #4c354a;
   font-family: "Indie Flower", cursive !important;
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 body.dark-mode .tip-text {
@@ -442,10 +442,10 @@ color:  #ffdfdf;
 
 .toggle-info-button {
   display: block;
-  margin-top: 1.3rem;
+  margin-top: 1rem;
   background-color: #fed1f9;
   border: 3px solid #fe4d8b;
-  padding: 0.7rem;
+  padding: 0.5rem;
   border-radius: 0.5rem;
   cursor: pointer;
   font-family: "Indie Flower", cursive;
